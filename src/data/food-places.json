@@ -1,0 +1,1738 @@
+[
+  {
+    "name": "1554 Cafe",
+    "amenity": "cafe",
+    "lat": 53.383406,
+    "lon": -1.4695007,
+    "detail": "Café ·  Church Street",
+    "source": "https://www.openstreetmap.org/node/6362462808"
+  },
+  {
+    "name": "200 degree Coffee",
+    "amenity": "cafe",
+    "lat": 53.3800262,
+    "lon": -1.4732659,
+    "detail": "Café · 25 Division Street",
+    "source": "https://www.openstreetmap.org/way/200223328"
+  },
+  {
+    "name": "2323",
+    "amenity": "cafe",
+    "lat": 53.3810699,
+    "lon": -1.4684297,
+    "detail": "Café · Coffee shop · 20 Norfolk Row",
+    "source": "https://www.openstreetmap.org/way/286735027"
+  },
+  {
+    "name": "400 Degree Celsius",
+    "amenity": "restaurant",
+    "lat": 53.3828095,
+    "lon": -1.4654358,
+    "detail": "Restaurant · Chinese · 46 Castle Square",
+    "source": "https://www.openstreetmap.org/node/5456387788"
+  },
+  {
+    "name": "Allstore",
+    "amenity": "cafe",
+    "lat": 53.378447,
+    "lon": -1.4734876,
+    "detail": "Café ·  Charter Square",
+    "source": "https://www.openstreetmap.org/node/12787578655"
+  },
+  {
+    "name": "Als Goncha Bubble Tea",
+    "amenity": "cafe",
+    "lat": 53.3771025,
+    "lon": -1.4704932,
+    "detail": "Café · 10 Eyre Street",
+    "source": "https://www.openstreetmap.org/node/6698539599"
+  },
+  {
+    "name": "Ambulo",
+    "amenity": "cafe",
+    "lat": 53.3793858,
+    "lon": -1.4670269,
+    "detail": "Café · 48 Arundel Gate",
+    "source": "https://www.openstreetmap.org/node/1936459741"
+  },
+  {
+    "name": "Angelica's Cafe",
+    "amenity": "cafe",
+    "lat": 53.3756041,
+    "lon": -1.4756365,
+    "detail": "Café · 78-82 The Moor",
+    "source": "https://www.openstreetmap.org/node/9645509692"
+  },
+  {
+    "name": "Asia Thai Street Food",
+    "amenity": "fast_food",
+    "lat": 53.3791086,
+    "lon": -1.4725354,
+    "detail": "Takeaway · Thai · 11 Backfields",
+    "source": "https://www.openstreetmap.org/node/13108581465"
+  },
+  {
+    "name": "Atkinsons Restaurant",
+    "amenity": "cafe",
+    "lat": 53.3755644,
+    "lon": -1.474485,
+    "detail": "Café · 78-82 The Moor",
+    "source": "https://www.openstreetmap.org/node/9645509689"
+  },
+  {
+    "name": "Aux Bon Vivant",
+    "amenity": "restaurant",
+    "lat": 53.3833196,
+    "lon": -1.4708966,
+    "detail": "Restaurant · French · 27a Campo Lane",
+    "source": "https://www.openstreetmap.org/node/13583476710"
+  },
+  {
+    "name": "Ayubowan Street Food",
+    "amenity": "fast_food",
+    "lat": 53.3816335,
+    "lon": -1.4701577,
+    "detail": "Takeaway · Sri lankan · 31-32 Orchard Square",
+    "source": "https://www.openstreetmap.org/node/13525892015"
+  },
+  {
+    "name": "BBs",
+    "amenity": "restaurant",
+    "lat": 53.3793967,
+    "lon": -1.4769557,
+    "detail": "Restaurant · Italian · 119 Devonshire Street",
+    "source": "https://www.openstreetmap.org/node/5702949623"
+  },
+  {
+    "name": "Bella Italia",
+    "amenity": "restaurant",
+    "lat": 53.379336,
+    "lon": -1.4691835,
+    "detail": "Restaurant · Italian ·  Norfolk Street",
+    "source": "https://www.openstreetmap.org/way/257101282"
+  },
+  {
+    "name": "Brenda's Fish & Chips",
+    "amenity": "fast_food",
+    "lat": 53.3765968,
+    "lon": -1.4720113,
+    "detail": "Takeaway · Fish and chips · 2 Earl Way",
+    "source": "https://www.openstreetmap.org/way/1136824699"
+  },
+  {
+    "name": "Brown's Grill",
+    "amenity": "restaurant",
+    "lat": 53.3792298,
+    "lon": -1.4698401,
+    "detail": "Restaurant · British · 6 St Paul's Parade",
+    "source": "https://www.openstreetmap.org/way/179117908"
+  },
+  {
+    "name": "Brunch\"n\"Lunch",
+    "amenity": "fast_food",
+    "lat": 53.3766742,
+    "lon": -1.4720211,
+    "detail": "Takeaway · 10 Matilda Street",
+    "source": "https://www.openstreetmap.org/way/103967344"
+  },
+  {
+    "name": "Builder's Brew",
+    "amenity": "cafe",
+    "lat": 53.3829983,
+    "lon": -1.4685079,
+    "detail": "Café · 2-3 East Parade",
+    "source": "https://www.openstreetmap.org/way/103568745"
+  },
+  {
+    "name": "Burger King",
+    "amenity": "fast_food",
+    "lat": 53.3784059,
+    "lon": -1.4627034,
+    "detail": "Takeaway · Burger ·  Sheaf Street",
+    "source": "https://www.openstreetmap.org/way/441581377"
+  },
+  {
+    "name": "Burger King",
+    "amenity": "fast_food",
+    "lat": 53.3824102,
+    "lon": -1.468696,
+    "detail": "Takeaway · Burger · 2 Fargate",
+    "source": "https://www.openstreetmap.org/way/1229530384"
+  },
+  {
+    "name": "Burritos Y Mas",
+    "amenity": "fast_food",
+    "lat": 53.3823863,
+    "lon": -1.4704779,
+    "detail": "Takeaway · Mexican · 2 Orchard Square",
+    "source": "https://www.openstreetmap.org/way/1030436299"
+  },
+  {
+    "name": "Butler's Balti House",
+    "amenity": "restaurant",
+    "lat": 53.3834622,
+    "lon": -1.4755038,
+    "detail": "Restaurant · Indian · 44-46 Broad Lane",
+    "source": "https://www.openstreetmap.org/way/1205891272"
+  },
+  {
+    "name": "Béres",
+    "amenity": "fast_food",
+    "lat": 53.3785496,
+    "lon": -1.4708945,
+    "detail": "Takeaway · Sandwich · 151 Pinstone Street",
+    "source": "https://www.openstreetmap.org/way/1010754592"
+  },
+  {
+    "name": "CAWA Coffee",
+    "amenity": "cafe",
+    "lat": 53.3800773,
+    "lon": -1.4732269,
+    "detail": "Café · Coffee shop · 23 Division Street",
+    "source": "https://www.openstreetmap.org/way/200223324"
+  },
+  {
+    "name": "Cafe Crucible",
+    "amenity": "cafe",
+    "lat": 53.3808243,
+    "lon": -1.4665821,
+    "detail": "Café",
+    "source": "https://www.openstreetmap.org/node/3920992413"
+  },
+  {
+    "name": "Cafe W",
+    "amenity": "cafe",
+    "lat": 53.3819125,
+    "lon": -1.4702971,
+    "detail": "Café",
+    "source": "https://www.openstreetmap.org/node/13158731727"
+  },
+  {
+    "name": "Caffe Piazza",
+    "amenity": "restaurant",
+    "lat": 53.3826199,
+    "lon": -1.4705565,
+    "detail": "Restaurant · Italian · 18 Church Street",
+    "source": "https://www.openstreetmap.org/way/118158241"
+  },
+  {
+    "name": "Caffè Massarella",
+    "amenity": "cafe",
+    "lat": 53.3759145,
+    "lon": -1.4741279,
+    "detail": "Café · Italian · 78-82 The Moor",
+    "source": "https://www.openstreetmap.org/node/9645509688"
+  },
+  {
+    "name": "Caffè Nero",
+    "amenity": "cafe",
+    "lat": 53.3822739,
+    "lon": -1.4682011,
+    "detail": "Café · Coffee shop · 2 High Street",
+    "source": "https://www.openstreetmap.org/way/103025066"
+  },
+  {
+    "name": "Caffè Nero",
+    "amenity": "cafe",
+    "lat": 53.3794462,
+    "lon": -1.4690524,
+    "detail": "Café · Coffee shop · 121 Norfolk Street",
+    "source": "https://www.openstreetmap.org/way/257101283"
+  },
+  {
+    "name": "Caffè Nero",
+    "amenity": "cafe",
+    "lat": 53.3800539,
+    "lon": -1.4730232,
+    "detail": "Café · Coffee shop · 11-17 Division Street",
+    "source": "https://www.openstreetmap.org/way/259100778"
+  },
+  {
+    "name": "Caffè Nero",
+    "amenity": "cafe",
+    "lat": 53.3772872,
+    "lon": -1.4723991,
+    "detail": "Café · Coffee shop ·  The Moor",
+    "source": "https://www.openstreetmap.org/way/499884830"
+  },
+  {
+    "name": "Caffè Tucci",
+    "amenity": "cafe",
+    "lat": 53.3806365,
+    "lon": -1.468745,
+    "detail": "Café · Italian · 49 Surrey Street",
+    "source": "https://www.openstreetmap.org/node/12587675701"
+  },
+  {
+    "name": "Café Local",
+    "amenity": "cafe",
+    "lat": 53.378022,
+    "lon": -1.4621675,
+    "detail": "Café · Coffee shop ·  Sheaf Street",
+    "source": "https://www.openstreetmap.org/way/134378926"
+  },
+  {
+    "name": "Cambridge Street Collective",
+    "amenity": "food_court",
+    "lat": 53.3791645,
+    "lon": -1.4723542,
+    "detail": "Food hall · 11 Backfields",
+    "source": "https://www.openstreetmap.org/way/1030991288"
+  },
+  {
+    "name": "Cana",
+    "amenity": "restaurant",
+    "lat": 53.3837183,
+    "lon": -1.4632523,
+    "detail": "Restaurant · 16A Dixon Lane",
+    "source": "https://www.openstreetmap.org/node/9576418832"
+  },
+  {
+    "name": "Caprinos",
+    "amenity": "fast_food",
+    "lat": 53.3765728,
+    "lon": -1.4647817,
+    "detail": "Takeaway · Pizza · 4 Suffolk Road",
+    "source": "https://www.openstreetmap.org/way/104000817"
+  },
+  {
+    "name": "Carribbean Sunrise Foods",
+    "amenity": "fast_food",
+    "lat": 53.3791198,
+    "lon": -1.4724489,
+    "detail": "Takeaway · 11 Backfields",
+    "source": "https://www.openstreetmap.org/node/13159942541"
+  },
+  {
+    "name": "Cawa",
+    "amenity": "cafe",
+    "lat": 53.377507,
+    "lon": -1.4622398,
+    "detail": "Café",
+    "source": "https://www.openstreetmap.org/node/14019116287"
+  },
+  {
+    "name": "Chatime",
+    "amenity": "cafe",
+    "lat": 53.3801105,
+    "lon": -1.4742677,
+    "detail": "Café · Bubble tea · 38 Division Street",
+    "source": "https://www.openstreetmap.org/way/1058286000"
+  },
+  {
+    "name": "Chatori Gali",
+    "amenity": "fast_food",
+    "lat": 53.3822785,
+    "lon": -1.4705975,
+    "detail": "Takeaway · 23-27 Church Street",
+    "source": "https://www.openstreetmap.org/node/13495913258"
+  },
+  {
+    "name": "Chilli Aroma",
+    "amenity": "restaurant",
+    "lat": 53.3838009,
+    "lon": -1.4765694,
+    "detail": "Restaurant · Chinese · 38 Garden Street",
+    "source": "https://www.openstreetmap.org/way/1205918699"
+  },
+  {
+    "name": "China Red",
+    "amenity": "restaurant",
+    "lat": 53.3766454,
+    "lon": -1.4740171,
+    "detail": "Restaurant · Chinese · 3 Rockingham Gate",
+    "source": "https://www.openstreetmap.org/way/103972278"
+  },
+  {
+    "name": "Chinese Kitchen",
+    "amenity": "restaurant",
+    "lat": 53.3818279,
+    "lon": -1.4667249,
+    "detail": "Restaurant · Chinese · 37-43 George Street",
+    "source": "https://www.openstreetmap.org/way/103019839"
+  },
+  {
+    "name": "Chopstix",
+    "amenity": "fast_food",
+    "lat": 53.3821557,
+    "lon": -1.4690104,
+    "detail": "Takeaway · Noodle · 10-12 Fargate",
+    "source": "https://www.openstreetmap.org/way/1052108654"
+  },
+  {
+    "name": "Clapping Seoul",
+    "amenity": "fast_food",
+    "lat": 53.3790354,
+    "lon": -1.4724395,
+    "detail": "Takeaway · Korean · 11 Backfields",
+    "source": "https://www.openstreetmap.org/node/13108581468"
+  },
+  {
+    "name": "Coffee @ Moor Market",
+    "amenity": "cafe",
+    "lat": 53.375944,
+    "lon": -1.4734534,
+    "detail": "Café · Coffee shop · 77 The Moor",
+    "source": "https://www.openstreetmap.org/node/6283112014"
+  },
+  {
+    "name": "Coffee Lab",
+    "amenity": "cafe",
+    "lat": 53.3807122,
+    "lon": -1.4689855,
+    "detail": "Café · 39 Surrey Street",
+    "source": "https://www.openstreetmap.org/node/13714434919"
+  },
+  {
+    "name": "Coffee Rules",
+    "amenity": "cafe",
+    "lat": 53.3838404,
+    "lon": -1.4645474,
+    "detail": "Café · Coffee shop · 17 Haymarket",
+    "source": "https://www.openstreetmap.org/way/1213810878"
+  },
+  {
+    "name": "Copper Pot",
+    "amenity": "cafe",
+    "lat": 53.3798579,
+    "lon": -1.4757518,
+    "detail": "Café · 68 Division Street",
+    "source": "https://www.openstreetmap.org/way/173933783"
+  },
+  {
+    "name": "Cosmo",
+    "amenity": "restaurant",
+    "lat": 53.37907,
+    "lon": -1.4685274,
+    "detail": "Restaurant · International · 7 St Paul's Square",
+    "source": "https://www.openstreetmap.org/node/2824721845"
+  },
+  {
+    "name": "Cosmos",
+    "amenity": "restaurant",
+    "lat": 53.3758645,
+    "lon": -1.4765212,
+    "detail": "Restaurant",
+    "source": "https://www.openstreetmap.org/node/10691466783"
+  },
+  {
+    "name": "Costa",
+    "amenity": "cafe",
+    "lat": 53.3783017,
+    "lon": -1.4621175,
+    "detail": "Café · Coffee shop ·  Sheaf Street",
+    "source": "https://www.openstreetmap.org/node/4121445994"
+  },
+  {
+    "name": "Costa",
+    "amenity": "cafe",
+    "lat": 53.3766916,
+    "lon": -1.472653,
+    "detail": "Café · Coffee shop · 43-51 The Moor",
+    "source": "https://www.openstreetmap.org/node/9537142220"
+  },
+  {
+    "name": "Costa",
+    "amenity": "cafe",
+    "lat": 53.3792066,
+    "lon": -1.4702869,
+    "detail": "Café · Coffee shop · 87-89 Pinstone Street",
+    "source": "https://www.openstreetmap.org/way/179117909"
+  },
+  {
+    "name": "Costa",
+    "amenity": "cafe",
+    "lat": 53.3763365,
+    "lon": -1.4729679,
+    "detail": "Café · Coffee shop · 65,67 The Moor",
+    "source": "https://www.openstreetmap.org/way/275806210"
+  },
+  {
+    "name": "Costa",
+    "amenity": "cafe",
+    "lat": 53.3810645,
+    "lon": -1.4692912,
+    "detail": "Café · Coffee shop · 49-63 Fargate",
+    "source": "https://www.openstreetmap.org/way/1028147071"
+  },
+  {
+    "name": "Cosy Club",
+    "amenity": "restaurant",
+    "lat": 53.380508,
+    "lon": -1.4731097,
+    "detail": "Restaurant · British · 1 Holly Street",
+    "source": "https://www.openstreetmap.org/way/1052163358"
+  },
+  {
+    "name": "Couch",
+    "amenity": "cafe",
+    "lat": 53.3831616,
+    "lon": -1.4712136,
+    "detail": "Café · 29,31 Campo Lane",
+    "source": "https://www.openstreetmap.org/node/6341200295"
+  },
+  {
+    "name": "Cubana",
+    "amenity": "restaurant",
+    "lat": 53.3815059,
+    "lon": -1.471595,
+    "detail": "Restaurant · Tapas, cuban",
+    "source": "https://www.openstreetmap.org/way/1117120104"
+  },
+  {
+    "name": "Cuppacha Bubble Tea",
+    "amenity": "cafe",
+    "lat": 53.3814326,
+    "lon": -1.4704982,
+    "detail": "Café · Bubble tea · 14 Orchard Square",
+    "source": "https://www.openstreetmap.org/way/103117905"
+  },
+  {
+    "name": "Cutie Pies & Fries",
+    "amenity": "fast_food",
+    "lat": 53.379045,
+    "lon": -1.4723363,
+    "detail": "Takeaway · Pizza · 11 Backfields",
+    "source": "https://www.openstreetmap.org/node/13159942538"
+  },
+  {
+    "name": "DJ’s",
+    "amenity": "cafe",
+    "lat": 53.3805705,
+    "lon": -1.4637708,
+    "detail": "Café · Coffee shop ·  Pond Street",
+    "source": "https://www.openstreetmap.org/node/1937006224"
+  },
+  {
+    "name": "DaShu",
+    "amenity": "restaurant",
+    "lat": 53.3773244,
+    "lon": -1.4706919,
+    "detail": "Restaurant · Korean · 30 Furnival Gate",
+    "source": "https://www.openstreetmap.org/node/11769215235"
+  },
+  {
+    "name": "Dave's Hot Chicken",
+    "amenity": "fast_food",
+    "lat": 53.380003,
+    "lon": -1.4725779,
+    "detail": "Takeaway · Chicken · 8-10 Cambridge Street",
+    "source": "https://www.openstreetmap.org/way/103693071"
+  },
+  {
+    "name": "Deli Shuss",
+    "amenity": "fast_food",
+    "lat": 53.3823683,
+    "lon": -1.4710355,
+    "detail": "Takeaway · Sandwich · 35 Church Street",
+    "source": "https://www.openstreetmap.org/node/6189663053"
+  },
+  {
+    "name": "Devonshire Chippy",
+    "amenity": "fast_food",
+    "lat": 53.3794696,
+    "lon": -1.4765039,
+    "detail": "Takeaway · Fish and chips · 105 Devonshire Street",
+    "source": "https://www.openstreetmap.org/node/11149359011"
+  },
+  {
+    "name": "Drip & Drizzle",
+    "amenity": "fast_food",
+    "lat": 53.3791854,
+    "lon": -1.4723564,
+    "detail": "Takeaway · 32 Cambridge Street",
+    "source": "https://www.openstreetmap.org/node/13108581467"
+  },
+  {
+    "name": "Drop Bear",
+    "amenity": "cafe",
+    "lat": 53.3783028,
+    "lon": -1.4658541,
+    "detail": "Café · 54 Howard Street",
+    "source": "https://www.openstreetmap.org/node/13510325115"
+  },
+  {
+    "name": "Edo Sushi",
+    "amenity": "restaurant",
+    "lat": 53.3832532,
+    "lon": -1.4669887,
+    "detail": "Restaurant · 24-26 High Court",
+    "source": "https://www.openstreetmap.org/way/182390622"
+  },
+  {
+    "name": "Ego Mediterranean",
+    "amenity": "restaurant",
+    "lat": 53.3802088,
+    "lon": -1.4682615,
+    "detail": "Restaurant · Mediterranean · 88 Surrey Street",
+    "source": "https://www.openstreetmap.org/node/6329388299"
+  },
+  {
+    "name": "El Chapo",
+    "amenity": "fast_food",
+    "lat": 53.3791474,
+    "lon": -1.4721827,
+    "detail": "Takeaway · Mexican · 11 Backfields",
+    "source": "https://www.openstreetmap.org/node/13159942535"
+  },
+  {
+    "name": "Falafel Queen",
+    "amenity": "restaurant",
+    "lat": 53.3814358,
+    "lon": -1.4707156,
+    "detail": "Restaurant · 45 Leopold Street",
+    "source": "https://www.openstreetmap.org/way/1030436302"
+  },
+  {
+    "name": "Feast",
+    "amenity": "cafe",
+    "lat": 53.3820198,
+    "lon": -1.4676419,
+    "detail": "Café · 31 Chapel Walk",
+    "source": "https://www.openstreetmap.org/node/3920953514"
+  },
+  {
+    "name": "Five Guys",
+    "amenity": "fast_food",
+    "lat": 53.3775379,
+    "lon": -1.4717705,
+    "detail": "Takeaway · Burger · 3 The Moor",
+    "source": "https://www.openstreetmap.org/way/1011032551"
+  },
+  {
+    "name": "Food Fusion",
+    "amenity": "fast_food",
+    "lat": 53.382285,
+    "lon": -1.4731008,
+    "detail": "Takeaway · Sandwich · 26 Trippet Lane",
+    "source": "https://www.openstreetmap.org/node/6293906871"
+  },
+  {
+    "name": "Forbici",
+    "amenity": "restaurant",
+    "lat": 53.3791987,
+    "lon": -1.4688989,
+    "detail": "Restaurant · Pizza · 4 Millennium Square",
+    "source": "https://www.openstreetmap.org/node/13628954862"
+  },
+  {
+    "name": "Forge Bakehouse",
+    "amenity": "fast_food",
+    "lat": 53.3782386,
+    "lon": -1.4628075,
+    "detail": "Takeaway ·  Sheaf Street",
+    "source": "https://www.openstreetmap.org/node/6173160654"
+  },
+  {
+    "name": "Foundry Coffee Roasters",
+    "amenity": "cafe",
+    "lat": 53.3791786,
+    "lon": -1.4724945,
+    "detail": "Café · Coffee shop · 11 Backfields",
+    "source": "https://www.openstreetmap.org/node/13108581470"
+  },
+  {
+    "name": "Frazer's",
+    "amenity": "cafe",
+    "lat": 53.375522,
+    "lon": -1.4696159,
+    "detail": "Café · Coffee shop · 203 Arundel Street",
+    "source": "https://www.openstreetmap.org/node/13589571955"
+  },
+  {
+    "name": "Fusion Organic Cafe",
+    "amenity": "cafe",
+    "lat": 53.3773198,
+    "lon": -1.4679834,
+    "detail": "Café · 74 Arundel Street",
+    "source": "https://www.openstreetmap.org/node/1698696079"
+  },
+  {
+    "name": "Gamers Guide Cafe",
+    "amenity": "cafe",
+    "lat": 53.383116,
+    "lon": -1.4685579,
+    "detail": "Café · 8 East Parade",
+    "source": "https://www.openstreetmap.org/node/248821075"
+  },
+  {
+    "name": "Gangnam",
+    "amenity": "restaurant",
+    "lat": 53.3785593,
+    "lon": -1.468849,
+    "detail": "Restaurant · Chinese ·  Arundel Gate",
+    "source": "https://www.openstreetmap.org/node/14170674836"
+  },
+  {
+    "name": "German Doner Kebab",
+    "amenity": "fast_food",
+    "lat": 53.3828412,
+    "lon": -1.4680539,
+    "detail": "Takeaway · Kebab · 11-15 High Street",
+    "source": "https://www.openstreetmap.org/way/206151312"
+  },
+  {
+    "name": "Goober's",
+    "amenity": "fast_food",
+    "lat": 53.3774036,
+    "lon": -1.467057,
+    "detail": "Takeaway · 150 Charles Street",
+    "source": "https://www.openstreetmap.org/node/13957475722"
+  },
+  {
+    "name": "Grand Kerala",
+    "amenity": "restaurant",
+    "lat": 53.3804189,
+    "lon": -1.4738189,
+    "detail": "Restaurant · Indian · 33 Carver Street",
+    "source": "https://www.openstreetmap.org/way/105506836"
+  },
+  {
+    "name": "Grazie",
+    "amenity": "restaurant",
+    "lat": 53.382083,
+    "lon": -1.4711994,
+    "detail": "Restaurant · Italian · 9 Leopold Street",
+    "source": "https://www.openstreetmap.org/way/1136159788"
+  },
+  {
+    "name": "Greggs",
+    "amenity": "fast_food",
+    "lat": 53.3752809,
+    "lon": -1.474608,
+    "detail": "Takeaway · Sandwich, bakery · 100 The Moor",
+    "source": "https://www.openstreetmap.org/node/2515505123"
+  },
+  {
+    "name": "Greggs",
+    "amenity": "fast_food",
+    "lat": 53.3790932,
+    "lon": -1.4704362,
+    "detail": "Takeaway · Sandwich, bakery · 95-101 Pinstone Street",
+    "source": "https://www.openstreetmap.org/way/179117912"
+  },
+  {
+    "name": "Greggs",
+    "amenity": "fast_food",
+    "lat": 53.3764761,
+    "lon": -1.4728967,
+    "detail": "Takeaway · Sandwich, bakery · 61 The Moor",
+    "source": "https://www.openstreetmap.org/way/1011032552"
+  },
+  {
+    "name": "Greggs",
+    "amenity": "fast_food",
+    "lat": 53.3834514,
+    "lon": -1.4663477,
+    "detail": "Takeaway · Sandwich, bakery · 21 Market Place",
+    "source": "https://www.openstreetmap.org/way/1037185509"
+  },
+  {
+    "name": "Greggs",
+    "amenity": "fast_food",
+    "lat": 53.382279,
+    "lon": -1.4688755,
+    "detail": "Takeaway · Sandwich, bakery · 6 Fargate",
+    "source": "https://www.openstreetmap.org/way/1052108656"
+  },
+  {
+    "name": "Grão Brazil Cafe",
+    "amenity": "cafe",
+    "lat": 53.3787838,
+    "lon": -1.4745927,
+    "detail": "Café · Brazilian",
+    "source": "https://www.openstreetmap.org/node/12294234023"
+  },
+  {
+    "name": "Gyros Express",
+    "amenity": "fast_food",
+    "lat": 53.3791046,
+    "lon": -1.4722572,
+    "detail": "Takeaway · Greek · 11 Backfields",
+    "source": "https://www.openstreetmap.org/node/13159942540"
+  },
+  {
+    "name": "HYGGE",
+    "amenity": "cafe",
+    "lat": 53.3825081,
+    "lon": -1.4650295,
+    "detail": "Café · 14-18 Fitzalan Square",
+    "source": "https://www.openstreetmap.org/node/9924720498"
+  },
+  {
+    "name": "HYGGE",
+    "amenity": "cafe",
+    "lat": 53.3792521,
+    "lon": -1.4732318,
+    "detail": "Café · 51 Carver Street",
+    "source": "https://www.openstreetmap.org/node/12565915918"
+  },
+  {
+    "name": "Happy Lemon",
+    "amenity": "cafe",
+    "lat": 53.3796361,
+    "lon": -1.4769389,
+    "detail": "Café · Bubble tea · 102 Devonshire Street",
+    "source": "https://www.openstreetmap.org/way/244705113"
+  },
+  {
+    "name": "Hollies Kitchen",
+    "amenity": "restaurant",
+    "lat": 53.3836215,
+    "lon": -1.4749626,
+    "detail": "Restaurant · Chinese · 8 Garden Street",
+    "source": "https://www.openstreetmap.org/node/11174824583"
+  },
+  {
+    "name": "Honey & Fig",
+    "amenity": "cafe",
+    "lat": 53.3804724,
+    "lon": -1.4767299,
+    "detail": "Café · Coffee shop · 9 Westfield Terrace",
+    "source": "https://www.openstreetmap.org/way/173933787"
+  },
+  {
+    "name": "House of Biryani",
+    "amenity": "fast_food",
+    "lat": 53.379097,
+    "lon": -1.4723383,
+    "detail": "Takeaway · Curry · 11 Backfields",
+    "source": "https://www.openstreetmap.org/node/13612881569"
+  },
+  {
+    "name": "House of Habesha",
+    "amenity": "fast_food",
+    "lat": 53.379135,
+    "lon": -1.4723296,
+    "detail": "Takeaway · Ethiopian · 11 Backfields",
+    "source": "https://www.openstreetmap.org/node/13159942542"
+  },
+  {
+    "name": "Hungry Buddha",
+    "amenity": "fast_food",
+    "lat": 53.3753539,
+    "lon": -1.4723593,
+    "detail": "Takeaway · Nepalese · 77 The Moor",
+    "source": "https://www.openstreetmap.org/node/11342278921"
+  },
+  {
+    "name": "Istanbul",
+    "amenity": "restaurant",
+    "lat": 53.3807787,
+    "lon": -1.4769728,
+    "detail": "Restaurant · Turkish · 152 West Street",
+    "source": "https://www.openstreetmap.org/node/3772042985"
+  },
+  {
+    "name": "Jiang Tea",
+    "amenity": "cafe",
+    "lat": 53.3839082,
+    "lon": -1.474594,
+    "detail": "Café · Bubble tea · 5 Hollis Croft",
+    "source": "https://www.openstreetmap.org/node/9924812431"
+  },
+  {
+    "name": "Jimmy's",
+    "amenity": "fast_food",
+    "lat": 53.3790646,
+    "lon": -1.4724281,
+    "detail": "Takeaway · Burger · 11 Backfields",
+    "source": "https://www.openstreetmap.org/node/13159942539"
+  },
+  {
+    "name": "Joomak",
+    "amenity": "restaurant",
+    "lat": 53.3773004,
+    "lon": -1.4705894,
+    "detail": "Restaurant · Korean · 32-34 Furnival Gate",
+    "source": "https://www.openstreetmap.org/node/13628915912"
+  },
+  {
+    "name": "Juice Presso",
+    "amenity": "cafe",
+    "lat": 53.3837388,
+    "lon": -1.469446,
+    "detail": "Café · Juice · 12 Campo Lane",
+    "source": "https://www.openstreetmap.org/way/1164644948"
+  },
+  {
+    "name": "KFC",
+    "amenity": "fast_food",
+    "lat": 53.3833611,
+    "lon": -1.4645933,
+    "detail": "Takeaway · Chicken · 1 Haymarket",
+    "source": "https://www.openstreetmap.org/way/175479470"
+  },
+  {
+    "name": "KYŌYŪ",
+    "amenity": "restaurant",
+    "lat": 53.3790954,
+    "lon": -1.4726139,
+    "detail": "Restaurant · Sushi, barbecue · 11 Backfields",
+    "source": "https://www.openstreetmap.org/node/13159942544"
+  },
+  {
+    "name": "Kai",
+    "amenity": "fast_food",
+    "lat": 53.379027,
+    "lon": -1.4725965,
+    "detail": "Takeaway · Sushi · 11 Backfields",
+    "source": "https://www.openstreetmap.org/node/13159942537"
+  },
+  {
+    "name": "Kollective Coffee and Kitchen",
+    "amenity": "cafe",
+    "lat": 53.3768634,
+    "lon": -1.4661421,
+    "detail": "Café · 1 Brown Street",
+    "source": "https://www.openstreetmap.org/node/6029371437"
+  },
+  {
+    "name": "La Bottega",
+    "amenity": "restaurant",
+    "lat": 53.3822776,
+    "lon": -1.4714608,
+    "detail": "Restaurant · Italian · 1-3 Leopold Street",
+    "source": "https://www.openstreetmap.org/way/1187709542"
+  },
+  {
+    "name": "Lemon Town",
+    "amenity": "cafe",
+    "lat": 53.3807218,
+    "lon": -1.4711269,
+    "detail": "Café · 30 Barker's Pool",
+    "source": "https://www.openstreetmap.org/node/13479140661"
+  },
+  {
+    "name": "Lemongrass Thai Street Food",
+    "amenity": "restaurant",
+    "lat": 53.3754983,
+    "lon": -1.4722382,
+    "detail": "Restaurant · Thai · 77 The Moor",
+    "source": "https://www.openstreetmap.org/node/11342278925"
+  },
+  {
+    "name": "Let's Sushi",
+    "amenity": "fast_food",
+    "lat": 53.3802511,
+    "lon": -1.473352,
+    "detail": "Takeaway · 14,16 Division Street",
+    "source": "https://www.openstreetmap.org/way/1104185442"
+  },
+  {
+    "name": "Little Snack Bar",
+    "amenity": "cafe",
+    "lat": 53.3796156,
+    "lon": -1.4770187,
+    "detail": "Café · Bubble tea · 104 Devonshire Street",
+    "source": "https://www.openstreetmap.org/way/1050335705"
+  },
+  {
+    "name": "Mai Sushi",
+    "amenity": "fast_food",
+    "lat": 53.3818112,
+    "lon": -1.4680199,
+    "detail": "Takeaway · Sushi · 19-31 Fargate",
+    "source": "https://www.openstreetmap.org/node/13521305160"
+  },
+  {
+    "name": "Mamas & Leonies",
+    "amenity": "restaurant",
+    "lat": 53.3805238,
+    "lon": -1.4681042,
+    "detail": "Restaurant · Italian · 111-115 Norfolk Street",
+    "source": "https://www.openstreetmap.org/way/103064061"
+  },
+  {
+    "name": "Marks & Spencer Cafe",
+    "amenity": "cafe",
+    "lat": 53.3818466,
+    "lon": -1.468655,
+    "detail": "Café · 19 Fargate",
+    "source": "https://www.openstreetmap.org/node/6156290582"
+  },
+  {
+    "name": "Marmadukes",
+    "amenity": "cafe",
+    "lat": 53.3810464,
+    "lon": -1.4682547,
+    "detail": "Café · 22 Norfolk Row",
+    "source": "https://www.openstreetmap.org/way/103059125"
+  },
+  {
+    "name": "Marmadukes",
+    "amenity": "cafe",
+    "lat": 53.3787667,
+    "lon": -1.4719283,
+    "detail": "Café · 42 Cambridge Street",
+    "source": "https://www.openstreetmap.org/way/1192968785"
+  },
+  {
+    "name": "McDonald's",
+    "amenity": "fast_food",
+    "lat": 53.3825346,
+    "lon": -1.4676862,
+    "detail": "Takeaway · Burger · 20-22 High Street",
+    "source": "https://www.openstreetmap.org/way/103025864"
+  },
+  {
+    "name": "McKay's Kitchen",
+    "amenity": "fast_food",
+    "lat": 53.3755862,
+    "lon": -1.4723207,
+    "detail": "Takeaway · English · 77 The Moor",
+    "source": "https://www.openstreetmap.org/node/11342278928"
+  },
+  {
+    "name": "MeriGo",
+    "amenity": "fast_food",
+    "lat": 53.383093,
+    "lon": -1.4668543,
+    "detail": "Takeaway · Chicken · 41-43 High Street",
+    "source": "https://www.openstreetmap.org/way/103806094"
+  },
+  {
+    "name": "Mighty Bites",
+    "amenity": "fast_food",
+    "lat": 53.3766004,
+    "lon": -1.4710284,
+    "detail": "Takeaway · 30 Eyre Street",
+    "source": "https://www.openstreetmap.org/way/103989586"
+  },
+  {
+    "name": "Miller & Carter",
+    "amenity": "restaurant",
+    "lat": 53.380645,
+    "lon": -1.4684526,
+    "detail": "Restaurant · Steak · 51 Surrey Street",
+    "source": "https://www.openstreetmap.org/way/1162511602"
+  },
+  {
+    "name": "Moor Cafe",
+    "amenity": "cafe",
+    "lat": 53.3754357,
+    "lon": -1.4753826,
+    "detail": "Café · 14 Fitzwilliam Gate",
+    "source": "https://www.openstreetmap.org/node/9350705556"
+  },
+  {
+    "name": "Motore Cafe",
+    "amenity": "cafe",
+    "lat": 53.378039,
+    "lon": -1.4632677,
+    "detail": "Café · Coffee shop",
+    "source": "https://www.openstreetmap.org/node/13889500126"
+  },
+  {
+    "name": "Mow's Coffee",
+    "amenity": "cafe",
+    "lat": 53.3773029,
+    "lon": -1.4677272,
+    "detail": "Café · Coffee shop",
+    "source": "https://www.openstreetmap.org/node/8794492042"
+  },
+  {
+    "name": "Mr Miyagi Revolving Sushi and Noodle Bar",
+    "amenity": "restaurant",
+    "lat": 53.3798171,
+    "lon": -1.476007,
+    "detail": "Restaurant · Sushi, japanese · 74 Division Street",
+    "source": "https://www.openstreetmap.org/way/173933784"
+  },
+  {
+    "name": "Nando's",
+    "amenity": "restaurant",
+    "lat": 53.3771414,
+    "lon": -1.4732239,
+    "detail": "Restaurant · Chicken, portuguese · 24 The Moor",
+    "source": "https://www.openstreetmap.org/way/1050340739"
+  },
+  {
+    "name": "Nando's",
+    "amenity": "restaurant",
+    "lat": 53.3804734,
+    "lon": -1.4771311,
+    "detail": "Restaurant · Chicken, portuguese ·  West Street",
+    "source": "https://www.openstreetmap.org/way/1202455809"
+  },
+  {
+    "name": "Niko Niko",
+    "amenity": "fast_food",
+    "lat": 53.3815077,
+    "lon": -1.4701892,
+    "detail": "Takeaway · Japanese · 31-32 Orchard Square",
+    "source": "https://www.openstreetmap.org/node/13525892007"
+  },
+  {
+    "name": "Noodle Doodle",
+    "amenity": "restaurant",
+    "lat": 53.3822033,
+    "lon": -1.4733907,
+    "detail": "Restaurant · Malaysian · 34-38 Trippet Lane",
+    "source": "https://www.openstreetmap.org/node/6293906865"
+  },
+  {
+    "name": "Noodle Inn Centro",
+    "amenity": "restaurant",
+    "lat": 53.3803197,
+    "lon": -1.476673,
+    "detail": "Restaurant · Chinese · 15 Westfield Terrace",
+    "source": "https://www.openstreetmap.org/node/6316048310"
+  },
+  {
+    "name": "Off The Canvas",
+    "amenity": "cafe",
+    "lat": 53.3763807,
+    "lon": -1.4705195,
+    "detail": "Café · 121 Eyre Street",
+    "source": "https://www.openstreetmap.org/node/9589353790"
+  },
+  {
+    "name": "Omomo",
+    "amenity": "restaurant",
+    "lat": 53.3797189,
+    "lon": -1.4748211,
+    "detail": "Restaurant · Korean · 67 Division Street",
+    "source": "https://www.openstreetmap.org/way/1056177678"
+  },
+  {
+    "name": "Oriental Taste Cuisine",
+    "amenity": "restaurant",
+    "lat": 53.3767018,
+    "lon": -1.4712227,
+    "detail": "Restaurant · Chinese ·  Matilda Street",
+    "source": "https://www.openstreetmap.org/way/1339108029"
+  },
+  {
+    "name": "Paphada's",
+    "amenity": "restaurant",
+    "lat": 53.3830295,
+    "lon": -1.4671015,
+    "detail": "Restaurant · Thai · 35 High Street",
+    "source": "https://www.openstreetmap.org/node/9589353786"
+  },
+  {
+    "name": "Perch Kitchen",
+    "amenity": "restaurant",
+    "lat": 53.3837396,
+    "lon": -1.4767628,
+    "detail": "Restaurant · 44 Garden Street",
+    "source": "https://www.openstreetmap.org/node/11174928645"
+  },
+  {
+    "name": "Pho",
+    "amenity": "restaurant",
+    "lat": 53.3816254,
+    "lon": -1.4720612,
+    "detail": "Restaurant · Vietnamese ·  Leopold Square",
+    "source": "https://www.openstreetmap.org/node/2410807662"
+  },
+  {
+    "name": "Piccolino",
+    "amenity": "restaurant",
+    "lat": 53.379452,
+    "lon": -1.4687475,
+    "detail": "Restaurant · 4 Millennium Square",
+    "source": "https://www.openstreetmap.org/way/257101308"
+  },
+  {
+    "name": "Pieminister",
+    "amenity": "restaurant",
+    "lat": 53.3761693,
+    "lon": -1.4719909,
+    "detail": "Restaurant · Pie",
+    "source": "https://www.openstreetmap.org/node/13955744046"
+  },
+  {
+    "name": "Pizza Hut Delivery",
+    "amenity": "fast_food",
+    "lat": 53.3809354,
+    "lon": -1.4751548,
+    "detail": "Takeaway · Pizza · 95-101 West Street",
+    "source": "https://www.openstreetmap.org/way/1058612691"
+  },
+  {
+    "name": "PizzaExpress",
+    "amenity": "restaurant",
+    "lat": 53.3792908,
+    "lon": -1.4683286,
+    "detail": "Restaurant · Pizza · 7 St Paul's Square",
+    "source": "https://www.openstreetmap.org/node/2620468214"
+  },
+  {
+    "name": "Plus 84",
+    "amenity": "fast_food",
+    "lat": 53.3789866,
+    "lon": -1.4725086,
+    "detail": "Takeaway · 11 Backfields",
+    "source": "https://www.openstreetmap.org/node/13108581469"
+  },
+  {
+    "name": "Popeyes",
+    "amenity": "fast_food",
+    "lat": 53.3770706,
+    "lon": -1.4722055,
+    "detail": "Takeaway · Chicken · 29 The Moor",
+    "source": "https://www.openstreetmap.org/way/103965314"
+  },
+  {
+    "name": "Pret A Manger",
+    "amenity": "fast_food",
+    "lat": 53.3787364,
+    "lon": -1.4715544,
+    "detail": "Takeaway · Sandwich · 35 Cambridge Street",
+    "source": "https://www.openstreetmap.org/way/1338817545"
+  },
+  {
+    "name": "Proove",
+    "amenity": "restaurant",
+    "lat": 53.3815241,
+    "lon": -1.4706604,
+    "detail": "Restaurant · Pizza · 5-6 Orchard Square",
+    "source": "https://www.openstreetmap.org/way/103117900"
+  },
+  {
+    "name": "QC’s Bagel Bar",
+    "amenity": "fast_food",
+    "lat": 53.3822656,
+    "lon": -1.4710045,
+    "detail": "Takeaway · Sandwich · 8 Orchard Street",
+    "source": "https://www.openstreetmap.org/node/6258362036"
+  },
+  {
+    "name": "Racky",
+    "amenity": "restaurant",
+    "lat": 53.3786561,
+    "lon": -1.4667488,
+    "detail": "Restaurant · Ramen, sushi · 46 Howard Street",
+    "source": "https://www.openstreetmap.org/way/1497435818"
+  },
+  {
+    "name": "Renata",
+    "amenity": "fast_food",
+    "lat": 53.3791166,
+    "lon": -1.4721793,
+    "detail": "Takeaway · 11 Backfields",
+    "source": "https://www.openstreetmap.org/node/14046094020"
+  },
+  {
+    "name": "Ricó",
+    "amenity": "fast_food",
+    "lat": 53.3815725,
+    "lon": -1.4700785,
+    "detail": "Takeaway · Latin american · 31-32 Orchard Square",
+    "source": "https://www.openstreetmap.org/node/13525892010"
+  },
+  {
+    "name": "Rudy's Neapolitan Pizza",
+    "amenity": "restaurant",
+    "lat": 53.3800864,
+    "lon": -1.4744042,
+    "detail": "Restaurant · Pizza · 40-44 Division Street",
+    "source": "https://www.openstreetmap.org/way/1058286001"
+  },
+  {
+    "name": "Saiko Ramen Bar",
+    "amenity": "fast_food",
+    "lat": 53.379137,
+    "lon": -1.4726018,
+    "detail": "Takeaway · Ramen · 11 Backfields",
+    "source": "https://www.openstreetmap.org/node/13159942543"
+  },
+  {
+    "name": "Sakushi",
+    "amenity": "restaurant",
+    "lat": 53.383357,
+    "lon": -1.4707572,
+    "detail": "Restaurant · Sushi · 27 Campo Lane",
+    "source": "https://www.openstreetmap.org/node/2284270570"
+  },
+  {
+    "name": "Sandwich Division",
+    "amenity": "cafe",
+    "lat": 53.3802125,
+    "lon": -1.4735278,
+    "detail": "Café · 22 Division Street",
+    "source": "https://www.openstreetmap.org/way/1131954509"
+  },
+  {
+    "name": "Sapore",
+    "amenity": "fast_food",
+    "lat": 53.3791022,
+    "lon": -1.4721552,
+    "detail": "Takeaway · Italian · 11 Backfields",
+    "source": "https://www.openstreetmap.org/node/13159942534"
+  },
+  {
+    "name": "Sarni's",
+    "amenity": "cafe",
+    "lat": 53.3830385,
+    "lon": -1.467643,
+    "detail": "Café · Breakfast, cake, coffee shop, sandwich, tea · 25 High Street",
+    "source": "https://www.openstreetmap.org/way/103834232"
+  },
+  {
+    "name": "Shawarma Kabin",
+    "amenity": "fast_food",
+    "lat": 53.3833144,
+    "lon": -1.4737912,
+    "detail": "Takeaway · 151 Hawley Street",
+    "source": "https://www.openstreetmap.org/node/6293906876"
+  },
+  {
+    "name": "Sheeby's Kitchen",
+    "amenity": "restaurant",
+    "lat": 53.3798245,
+    "lon": -1.4756135,
+    "detail": "Restaurant · Indian · 66 Division Street",
+    "source": "https://www.openstreetmap.org/way/173933785"
+  },
+  {
+    "name": "Sheffield Plate",
+    "amenity": "food_court",
+    "lat": 53.3815471,
+    "lon": -1.4702414,
+    "detail": "Food hall · 31-32 Orchard Square",
+    "source": "https://www.openstreetmap.org/way/103114991"
+  },
+  {
+    "name": "Shoot the Bull",
+    "amenity": "fast_food",
+    "lat": 53.3816249,
+    "lon": -1.4700893,
+    "detail": "Takeaway · American · 31-32 Orchard Square",
+    "source": "https://www.openstreetmap.org/node/13525892011"
+  },
+  {
+    "name": "Showroom Cafe Bar",
+    "amenity": "cafe",
+    "lat": 53.3775728,
+    "lon": -1.4651841,
+    "detail": "Café",
+    "source": "https://www.openstreetmap.org/node/6283112027"
+  },
+  {
+    "name": "Silversmiths",
+    "amenity": "restaurant",
+    "lat": 53.3782217,
+    "lon": -1.4665507,
+    "detail": "Restaurant · 111 Arundel Street",
+    "source": "https://www.openstreetmap.org/way/104017680"
+  },
+  {
+    "name": "Site Gallery",
+    "amenity": "cafe",
+    "lat": 53.3769286,
+    "lon": -1.4660275,
+    "detail": "Café",
+    "source": "https://www.openstreetmap.org/way/191693861"
+  },
+  {
+    "name": "Smoke BBQ",
+    "amenity": "restaurant",
+    "lat": 53.378802,
+    "lon": -1.4687956,
+    "detail": "Restaurant · Barbecue · 1 Saint Paul's Place",
+    "source": "https://www.openstreetmap.org/node/10235221976"
+  },
+  {
+    "name": "Snake Chinese Cafe",
+    "amenity": "restaurant",
+    "lat": 53.3754236,
+    "lon": -1.4723001,
+    "detail": "Restaurant · Chinese",
+    "source": "https://www.openstreetmap.org/node/11342278946"
+  },
+  {
+    "name": "Soya Express",
+    "amenity": "restaurant",
+    "lat": 53.3767858,
+    "lon": -1.4714467,
+    "detail": "Restaurant · Chinese · 17-19 Matilda Street",
+    "source": "https://www.openstreetmap.org/way/103989341"
+  },
+  {
+    "name": "Sports Lounge",
+    "amenity": "restaurant",
+    "lat": 53.3786893,
+    "lon": -1.4686018,
+    "detail": "Restaurant ·  Saint Paul's Place",
+    "source": "https://www.openstreetmap.org/node/3920991345"
+  },
+  {
+    "name": "Spud Bros Express",
+    "amenity": "fast_food",
+    "lat": 53.382083,
+    "lon": -1.4690342,
+    "detail": "Takeaway · Baked potato · 14 Fargate",
+    "source": "https://www.openstreetmap.org/way/1040376469"
+  },
+  {
+    "name": "Starbucks",
+    "amenity": "cafe",
+    "lat": 53.3780207,
+    "lon": -1.4631302,
+    "detail": "Café · Coffee shop ·  Sheaf Street",
+    "source": "https://www.openstreetmap.org/node/2207211798"
+  },
+  {
+    "name": "Starbucks",
+    "amenity": "cafe",
+    "lat": 53.3804069,
+    "lon": -1.4679473,
+    "detail": "Café · Coffee shop · 1 Tudor Square",
+    "source": "https://www.openstreetmap.org/way/175593661"
+  },
+  {
+    "name": "Steam Yard",
+    "amenity": "cafe",
+    "lat": 53.3793682,
+    "lon": -1.4760908,
+    "detail": "Café · Coffee shop, sandwich, bagel, pastry · 95-97 Division Street",
+    "source": "https://www.openstreetmap.org/node/4255288891"
+  },
+  {
+    "name": "Subway",
+    "amenity": "fast_food",
+    "lat": 53.375378,
+    "lon": -1.4745093,
+    "detail": "Takeaway · Sandwich · 96 The Moor",
+    "source": "https://www.openstreetmap.org/node/2515505153"
+  },
+  {
+    "name": "Subway",
+    "amenity": "fast_food",
+    "lat": 53.3836482,
+    "lon": -1.4644422,
+    "detail": "Takeaway · Sandwich · 57 King Street",
+    "source": "https://www.openstreetmap.org/node/11245573190"
+  },
+  {
+    "name": "Subway",
+    "amenity": "fast_food",
+    "lat": 53.3796282,
+    "lon": -1.4768327,
+    "detail": "Takeaway · Sandwich · 100 Devonshire Street",
+    "source": "https://www.openstreetmap.org/way/244705118"
+  },
+  {
+    "name": "Subway",
+    "amenity": "fast_food",
+    "lat": 53.3820461,
+    "lon": -1.4707283,
+    "detail": "Takeaway · Sandwich · 21 Orchard Square",
+    "source": "https://www.openstreetmap.org/way/1026807588"
+  },
+  {
+    "name": "Subway",
+    "amenity": "fast_food",
+    "lat": 53.3767138,
+    "lon": -1.4644239,
+    "detail": "Takeaway · Sandwich ·  Suffolk Road",
+    "source": "https://www.openstreetmap.org/way/1074593568"
+  },
+  {
+    "name": "Sushi Express",
+    "amenity": "restaurant",
+    "lat": 53.3769328,
+    "lon": -1.4769019,
+    "detail": "Restaurant · Sushi · 8 Milton Street",
+    "source": "https://www.openstreetmap.org/node/2624389272"
+  },
+  {
+    "name": "Tamper",
+    "amenity": "cafe",
+    "lat": 53.3773821,
+    "lon": -1.4674815,
+    "detail": "Café · Coffee shop · 149 Arundel Street",
+    "source": "https://www.openstreetmap.org/way/1036995784"
+  },
+  {
+    "name": "Terrace Goods",
+    "amenity": "restaurant",
+    "lat": 53.3816022,
+    "lon": -1.4701815,
+    "detail": "Restaurant ·  Orchard Square",
+    "source": "https://www.openstreetmap.org/way/1147463814"
+  },
+  {
+    "name": "Thai Kitchen",
+    "amenity": "fast_food",
+    "lat": 53.3815529,
+    "lon": -1.4700712,
+    "detail": "Takeaway · Thai · 31-32 Orchard Square",
+    "source": "https://www.openstreetmap.org/node/13525892009"
+  },
+  {
+    "name": "The Athenian",
+    "amenity": "fast_food",
+    "lat": 53.3815281,
+    "lon": -1.4701221,
+    "detail": "Takeaway · Greek · 31-32 Orchard Square",
+    "source": "https://www.openstreetmap.org/node/13525892008"
+  },
+  {
+    "name": "The Bears Cafe",
+    "amenity": "cafe",
+    "lat": 53.382463,
+    "lon": -1.4768037,
+    "detail": "Café · 2 Rockingham Street",
+    "source": "https://www.openstreetmap.org/node/11173059627"
+  },
+  {
+    "name": "The Botanist",
+    "amenity": "restaurant",
+    "lat": 53.3783203,
+    "lon": -1.4732896,
+    "detail": "Restaurant ·  Charter Row",
+    "source": "https://www.openstreetmap.org/way/698192672"
+  },
+  {
+    "name": "The Cabin",
+    "amenity": "cafe",
+    "lat": 53.375394,
+    "lon": -1.4752427,
+    "detail": "Café · Pancake, waffle, breakfast, brunch, coffee shop · 10-12 Fitzwilliam Gate",
+    "source": "https://www.openstreetmap.org/node/9350666761"
+  },
+  {
+    "name": "The Chakra Lounge",
+    "amenity": "cafe",
+    "lat": 53.3828612,
+    "lon": -1.4639697,
+    "detail": "Café · Indian · 5 Fitzalan Square",
+    "source": "https://www.openstreetmap.org/way/1167159341"
+  },
+  {
+    "name": "The Coffee Room",
+    "amenity": "cafe",
+    "lat": 53.3780596,
+    "lon": -1.4616073,
+    "detail": "Café · Coffee shop ·  Sheaf Street",
+    "source": "https://www.openstreetmap.org/way/441578320"
+  },
+  {
+    "name": "The Market Chippy",
+    "amenity": "fast_food",
+    "lat": 53.3753227,
+    "lon": -1.4724047,
+    "detail": "Takeaway · Fish and chips · 77 The Moor",
+    "source": "https://www.openstreetmap.org/node/11342278951"
+  },
+  {
+    "name": "The Matcha Spot",
+    "amenity": "cafe",
+    "lat": 53.3837307,
+    "lon": -1.469537,
+    "detail": "Café · Matcha · 16 Campo Lane",
+    "source": "https://www.openstreetmap.org/way/1164644947"
+  },
+  {
+    "name": "The Post Office Cafe",
+    "amenity": "cafe",
+    "lat": 53.3823618,
+    "lon": -1.464284,
+    "detail": "Café · Coffee shop ·  Fitzalan Square",
+    "source": "https://www.openstreetmap.org/node/5180661585"
+  },
+  {
+    "name": "The Sandwich Place",
+    "amenity": "fast_food",
+    "lat": 53.3751551,
+    "lon": -1.4679828,
+    "detail": "Takeaway · Sandwich · 102 Matilda Street",
+    "source": "https://www.openstreetmap.org/node/11337110417"
+  },
+  {
+    "name": "The Street Food Chef Mexican Canteen",
+    "amenity": "fast_food",
+    "lat": 53.3765788,
+    "lon": -1.4688633,
+    "detail": "Takeaway · Mexican · 90 Arundel Street",
+    "source": "https://www.openstreetmap.org/node/13181475666"
+  },
+  {
+    "name": "The Tea Studio",
+    "amenity": "cafe",
+    "lat": 53.3795671,
+    "lon": -1.4730839,
+    "detail": "Café · 8 Backfields",
+    "source": "https://www.openstreetmap.org/node/6293769619"
+  },
+  {
+    "name": "Tiny Shop",
+    "amenity": "cafe",
+    "lat": 53.3791346,
+    "lon": -1.4726454,
+    "detail": "Café · Bubble tea · 11 Backfields",
+    "source": "https://www.openstreetmap.org/node/13108581475"
+  },
+  {
+    "name": "Trattoria Maria",
+    "amenity": "restaurant",
+    "lat": 53.3789998,
+    "lon": -1.4722216,
+    "detail": "Restaurant · Italian · 4 Wellington Street",
+    "source": "https://www.openstreetmap.org/node/13699010451"
+  },
+  {
+    "name": "Tsuki",
+    "amenity": "restaurant",
+    "lat": 53.381462,
+    "lon": -1.4740784,
+    "detail": "Restaurant · Japanese · 58-60 West Street",
+    "source": "https://www.openstreetmap.org/node/7099838393"
+  },
+  {
+    "name": "Turkish Doner",
+    "amenity": "fast_food",
+    "lat": 53.3829861,
+    "lon": -1.4675882,
+    "detail": "Takeaway · Kebab · 27 High Street",
+    "source": "https://www.openstreetmap.org/way/1037185506"
+  },
+  {
+    "name": "Turtle Bay",
+    "amenity": "restaurant",
+    "lat": 53.3807217,
+    "lon": -1.4731498,
+    "detail": "Restaurant · Caribbean · 2 Holly Street",
+    "source": "https://www.openstreetmap.org/way/1052163357"
+  },
+  {
+    "name": "Uncle Lin's Restaurant",
+    "amenity": "restaurant",
+    "lat": 53.3802662,
+    "lon": -1.476633,
+    "detail": "Restaurant · Chinese · 17 Westfield Terrace",
+    "source": "https://www.openstreetmap.org/node/6316048307"
+  },
+  {
+    "name": "Union St Coffee & Street Food",
+    "amenity": "cafe",
+    "lat": 53.3786992,
+    "lon": -1.4703164,
+    "detail": "Café · 18-20 Union Street",
+    "source": "https://www.openstreetmap.org/node/4423742762"
+  },
+  {
+    "name": "Upper Crust",
+    "amenity": "fast_food",
+    "lat": 53.3780706,
+    "lon": -1.4631225,
+    "detail": "Takeaway · Sandwich ·  Sheaf Street",
+    "source": "https://www.openstreetmap.org/node/6283112010"
+  },
+  {
+    "name": "Urban Kebab",
+    "amenity": "fast_food",
+    "lat": 53.3801802,
+    "lon": -1.4737037,
+    "detail": "Takeaway · Kebab · 26-30 Division Street",
+    "source": "https://www.openstreetmap.org/way/105506835"
+  },
+  {
+    "name": "VeroGusto",
+    "amenity": "restaurant",
+    "lat": 53.3810922,
+    "lon": -1.4687363,
+    "detail": "Restaurant · Italian · 12 Norfolk Row",
+    "source": "https://www.openstreetmap.org/way/286735024"
+  },
+  {
+    "name": "Vnam",
+    "amenity": "fast_food",
+    "lat": 53.3791302,
+    "lon": -1.472353,
+    "detail": "Takeaway · Vietnamese · 11 Backfields",
+    "source": "https://www.openstreetmap.org/node/13159942536"
+  },
+  {
+    "name": "Wagamama",
+    "amenity": "restaurant",
+    "lat": 53.3815601,
+    "lon": -1.4712416,
+    "detail": "Restaurant · Asian",
+    "source": "https://www.openstreetmap.org/way/1053381094"
+  },
+  {
+    "name": "Wellies",
+    "amenity": "cafe",
+    "lat": 53.3775986,
+    "lon": -1.4673493,
+    "detail": "Café · 140 Charles Street",
+    "source": "https://www.openstreetmap.org/node/4423944146"
+  },
+  {
+    "name": "Wendy's",
+    "amenity": "fast_food",
+    "lat": 53.3825679,
+    "lon": -1.4674936,
+    "detail": "Takeaway · Burger · 25 High Street",
+    "source": "https://www.openstreetmap.org/way/1120196704"
+  },
+  {
+    "name": "Wokie Box",
+    "amenity": "fast_food",
+    "lat": 53.3773829,
+    "lon": -1.4708627,
+    "detail": "Takeaway · Chinese · 26 Furnival Gate",
+    "source": "https://www.openstreetmap.org/node/6185667293"
+  },
+  {
+    "name": "Wong Ting",
+    "amenity": "restaurant",
+    "lat": 53.3766909,
+    "lon": -1.4721353,
+    "detail": "Restaurant · Cantonese · 6-8 Matilda Street",
+    "source": "https://www.openstreetmap.org/way/103967340"
+  },
+  {
+    "name": "Yutu",
+    "amenity": "restaurant",
+    "lat": 53.3768102,
+    "lon": -1.4692692,
+    "detail": "Restaurant · Sushi, korean · 49a Eyre Lane",
+    "source": "https://www.openstreetmap.org/node/14014249294"
+  },
+  {
+    "name": "Zizzi",
+    "amenity": "restaurant",
+    "lat": 53.381925,
+    "lon": -1.4721156,
+    "detail": "Restaurant · Italian",
+    "source": "https://www.openstreetmap.org/node/248820719"
+  },
+  {
+    "name": "Zooby's",
+    "amenity": "cafe",
+    "lat": 53.38002,
+    "lon": -1.4677737,
+    "detail": "Café · 90 Surrey Street",
+    "source": "https://www.openstreetmap.org/node/12488650702"
+  },
+  {
+    "name": "foodetc",
+    "amenity": "cafe",
+    "lat": 53.3820312,
+    "lon": -1.462284,
+    "detail": "Café",
+    "source": "https://www.openstreetmap.org/node/6236634285"
+  },
+  {
+    "name": "isloo bites",
+    "amenity": "restaurant",
+    "lat": 53.3774041,
+    "lon": -1.4650663,
+    "detail": "Restaurant",
+    "source": "https://www.openstreetmap.org/node/6283112012"
+  },
+  {
+    "name": "townes",
+    "amenity": "cafe",
+    "lat": 53.3836931,
+    "lon": -1.469915,
+    "detail": "Café · Bagel, cake, coffee shop · 26a Campo Lane",
+    "source": "https://www.openstreetmap.org/way/1164644951"
+  }
+]
