@@ -35,12 +35,16 @@ pnpm format:check
 ## Features
 
 - Walking, cycling and driving isochrones with 5–30 minute controls, always starting at Owen Building.
-- Coffee shops selected by default; a header Share button copies the map link.
+- Coffee shops selected by default. Search nearby places by name, street or food description; results and markers share the same category and routed travel-time filters. Search ignores case and accents.
+- The header Share button opens the native share sheet where supported, with clipboard fallback. Shared URLs preserve the travel mode, time limit, category and search; cancelling the share sheet leaves the clipboard alone.
+- Hallam City Campus building footprints highlighted in plum with permanent name labels by default. The Layers control independently toggles buildings (including labels) and nearby places; building popups show names and Google Maps directions.
+- Initial zoom and campus recentering fit the main building cluster, excluding the separate northern Aspect Court, Oneleven and Institute of Arts sites. Loading initial contours preserves this framing; changing travel settings fits the resulting travel area.
 - Three detailed street-network travel-time areas, map panning/zooming and campus recentering. Contour simplification and small-contour removal are disabled; Leaflet also retains the full geometry.
 - Nearby coffee shops, places to eat, green spaces, culture and essentials, filtered together in the place list and map by category and individually routed travel times.
 - Each place popup links to Google Maps directions from the device’s current location using the selected travel mode. The origin is omitted so Google Maps resolves the starting location. Google Maps handles navigation or route preview depending on the device and location.
-- GeoJSON download and shareable URL settings (`?mode=bicycle&minutes=20`).
+- GeoJSON download and shareable URL settings (`?mode=bicycle&minutes=20&category=Places+to+eat&q=thai`).
 - Responsive mobile layout, keyboard controls, accessible modal and loading/error states.
+- Mobile map key sits in a compact footer below the map, leaving the full map viewport unobstructed. The redundant campus title banner is removed on all screen sizes.
 - Debounced, abortable requests with a 15-second timeout and session caching. Destination travel times are batched below the public server’s 100-location limit and cached per travel mode.
 - Real saved 10-minute walking contours for an immediate default view. A failed fresh request shows a retry action rather than fabricated contours.
 
@@ -66,6 +70,7 @@ Set `VITE_VALHALLA_URL` to your Valhalla server's base URL, then restart Vite (o
 src/
   App.tsx                 Map, controls, accessible information modal
   Basemap.tsx             OpenFreeMap Positron and bundled MapLibre worker
+  CampusBuildings.tsx     Interactive Hallam building footprint overlay
   index.css               Responsive styles and Tailwind entry
   lib.ts                  Typed routing client and geographic calculations
   lib.test.ts             Behaviour and API-contract tests
@@ -74,6 +79,7 @@ src/
   data/walking-times.json  Saved individual walking route times
   data/walking-15.json     Saved API-test fixture
   data/food-places.json    OpenStreetMap coffee and food locations
+  data/campus-buildings.json  OpenStreetMap Hallam building footprints
 ```
 
 ## Deployment
@@ -85,3 +91,7 @@ An independent campus explorer; not affiliated with Sheffield Hallam University.
 ## Coffee and food data
 
 `src/data/food-places.json` contains named cafés, restaurants, takeaways and food courts from [OpenStreetMap](https://www.openstreetmap.org/copyright), fetched on 20 September 2026 from the official map API for the city-centre bounds `-1.477,53.375,-1.460,53.384`. Each record includes a link to its source node or way. Way locations use the average of their mapped nodes. Categories follow the OSM amenity tag: cafés appear under Coffee shops; restaurants, takeaways and food courts appear under Places to eat. This is a saved local selection, so longer travel times do not provide complete city-wide coverage. Opening hours and business availability are not checked live.
+
+## University building data
+
+`src/data/campus-buildings.json` contains 25 building footprints from the same OpenStreetMap extract, licensed under [ODbL](https://www.openstreetmap.org/copyright). Selection includes named buildings explicitly operated by Sheffield Hallam University, named Sheffield Hallam buildings, and Hallam Hall on [City Campus](https://www.shu.ac.uk/visit-us/how-to-find-us/city-campus-map). Each feature retains its source way link and full closed polygon, with counterclockwise exterior rings. These are individual building outlines, not campus boundaries or approximate zones. The snapshot covers City Campus and nearby university buildings, not Collegiate Campus or every university property. Names and ownership follow the saved mapping and may change. Directions target each footprint's bounding-box centre, so Google Maps may choose a nearby access point rather than a particular entrance.

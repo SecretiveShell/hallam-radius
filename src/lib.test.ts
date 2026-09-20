@@ -14,6 +14,7 @@ import {
   places,
   reachableBand,
   readSettings,
+  readPlaceFilters,
 } from './lib'
 import type { Contours, Mode } from './lib'
 import walking15 from './data/walking-15.json'
@@ -38,6 +39,59 @@ const rectangle = (
   },
 })
 afterEach(() => vi.unstubAllGlobals())
+
+describe('place search', () => {
+  it('restores shared filters and handles invalid categories safely', () => {
+    expect(readPlaceFilters('?category=Places+to+eat&q=thai')).toEqual({
+      category: 'Places to eat',
+      query: 'thai',
+    })
+    expect(readPlaceFilters('?category=unknown')).toEqual({
+      category: 'Coffee shops',
+      query: '',
+    })
+    expect(readPlaceFilters(`?q=${'a'.repeat(150)}`).query).toHaveLength(120)
+  })
+  it('matches names and street details regardless of case, accents or whitespace', () => {
+    const cafe = places.find((place) => place.name === 'Ambulo')!
+    const times = new Map([[placeKey(cafe), 120]])
+    for (const query of ['AMBULO', '  cafe   ARUNDEL  ', 'café']) {
+      expect(
+        nearbyPlaces(times, 10, 'Coffee shops', query).map(
+          ({ place }) => place,
+        ),
+      ).toEqual([cafe])
+    }
+  })
+  it('keeps category and exact travel-time limits in force while searching', () => {
+    const cafe = places.find((place) => place.name === 'Ambulo')!
+    expect(
+      nearbyPlaces(
+        new Map([[placeKey(cafe), 601]]),
+        10,
+        'Coffee shops',
+        'Ambulo',
+      ),
+    ).toEqual([])
+    expect(
+      nearbyPlaces(
+        new Map([[placeKey(cafe), 60]]),
+        10,
+        'Places to eat',
+        'Ambulo',
+      ),
+    ).toEqual([])
+    expect(nearbyPlaces(null, 10, 'Coffee shops', 'Ambulo')).toEqual([])
+  })
+  it('restores the complete ordered result set when search is cleared', () => {
+    expect(nearbyPlaces(defaultTravelTimes, 10, 'Coffee shops', '   ')).toEqual(
+      nearbyPlaces(defaultTravelTimes, 10, 'Coffee shops'),
+    )
+    expect(
+      nearbyPlaces(defaultTravelTimes, 10, 'Coffee shops', 'no-such-place-xyz'),
+    ).toEqual([])
+  })
+})
 
 describe('shareable map settings', () => {
   it('defaults safely for absent or unsupported settings', () => {
@@ -259,13 +313,11 @@ describe('individual routed travel times', () => {
   it.each<Mode>(['pedestrian', 'bicycle', 'auto'])(
     'requests %s route times using the same origin and profile as the area',
     async (mode) => {
-      const request = vi
-        .fn()
-        .mockResolvedValue(
-          new Response(JSON.stringify(matrix([123, null, 321])), {
-            status: 200,
-          }),
-        )
+      const request = vi.fn().mockResolvedValue(
+        new Response(JSON.stringify(matrix([123, null, 321])), {
+          status: 200,
+        }),
+      )
       vi.stubGlobal('fetch', request)
       const result = await fetchTravelTimes(
         mode,

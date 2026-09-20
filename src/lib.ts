@@ -28,6 +28,16 @@ export const placeCategories = [
   'Essentials',
 ] as const
 export type PlaceFilter = (typeof placeCategories)[number]
+export function readPlaceFilters(search: string) {
+  const params = new URLSearchParams(search)
+  const category = params.get('category')
+  return {
+    category: placeCategories.includes(category as PlaceFilter)
+      ? (category as PlaceFilter)
+      : ('Coffee shops' as PlaceFilter),
+    query: (params.get('q') ?? '').slice(0, 120),
+  }
+}
 export type Place = {
   name: string
   category: Exclude<PlaceFilter, 'All places'>
@@ -138,11 +148,17 @@ export function nearbyPlaces(
   times: TravelTimes | null,
   minutes: number,
   category: PlaceFilter,
+  query = '',
 ) {
   if (!times) return []
+  const normalize = (value: string) =>
+    value.normalize('NFKD').replace(/\p{M}/gu, '').toLowerCase()
+  const words = normalize(query).trim().split(/\s+/).filter(Boolean)
   return places
     .flatMap((place) => {
       if (category !== 'All places' && category !== place.category) return []
+      const searchable = normalize(`${place.name} ${place.detail}`)
+      if (!words.every((word) => searchable.includes(word))) return []
       const seconds = times.get(placeKey(place))
       if (
         typeof seconds !== 'number' ||

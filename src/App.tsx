@@ -11,6 +11,7 @@ import {
   Minus,
   Layers,
   Share2,
+  Search,
   Download,
   X,
   Info,
@@ -33,8 +34,9 @@ import {
 } from 'react-leaflet'
 import L from 'leaflet'
 import Basemap from './Basemap'
+import CampusBuildings from './CampusBuildings'
+import { mainCampusBounds } from './campus'
 import {
-  ORIGIN,
   modes,
   colors,
   placeCategories,
@@ -42,6 +44,7 @@ import {
   getBands,
   googleMapsDirectionsUrl,
   readSettings,
+  readPlaceFilters,
   colorFor,
   fetchContours,
   defaultContours,
@@ -52,12 +55,6 @@ import {
 } from './lib'
 import type { Contours, Mode, Place, PlaceFilter, TravelTimes } from './lib'
 
-const originIcon = L.divIcon({
-  className: 'origin-marker',
-  html: '<span class="origin-pulse"></span><span class="origin-dot"><span></span></span>',
-  iconSize: [36, 36],
-  iconAnchor: [18, 18],
-})
 const placeIcon = L.divIcon({
   className: 'place-marker',
   html: '<span></span>',
@@ -70,17 +67,26 @@ const timeCache = new Map<Mode, TravelTimes>([
   ['pedestrian', defaultTravelTimes],
 ])
 const initial = readSettings(window.location.search)
+const initialFilters = readPlaceFilters(window.location.search)
+const campusFitOptions: L.FitBoundsOptions = {
+  paddingTopLeft: [32, 64],
+  paddingBottomRight: [64, 40],
+  maxZoom: 17,
+}
 
 function MapActions({
   reset,
   selected,
   data,
+  viewKey,
 }: {
   reset: number
   selected: Place | null
   data: Contours | null
+  viewKey: string
 }) {
   const map = useMap()
+  const lastFittedView = useRef(viewKey)
   useEffect(() => {
     let frame = 0
     const observer = new ResizeObserver(() => {
@@ -95,7 +101,8 @@ function MapActions({
   }, [map])
   useEffect(() => {
     if (reset)
-      map.flyTo(ORIGIN, 14, {
+      map.flyToBounds(mainCampusBounds, {
+        ...campusFitOptions,
         duration: 0.8,
         animate: !window.matchMedia('(prefers-reduced-motion: reduce)').matches,
       })
@@ -108,13 +115,17 @@ function MapActions({
       })
   }, [map, selected])
   useEffect(() => {
-    if (data)
+    // Loading the initial contours must not override the campus framing.
+    // Subsequent travel-setting changes still fit their new travel area.
+    if (data && viewKey !== lastFittedView.current) {
+      lastFittedView.current = viewKey
       map.fitBounds(L.geoJSON(data).getBounds(), {
         padding: [65, 65],
         maxZoom: 15,
         animate: !window.matchMedia('(prefers-reduced-motion: reduce)').matches,
       })
-  }, [map, data])
+    }
+  }, [map, data, viewKey])
   return (
     <div className="map-zoom">
       <button aria-label="Zoom in" onClick={() => map.zoomIn()}>
@@ -227,8 +238,11 @@ export default function App() {
   const [about, setAbout] = useState(false)
   const [reset, setReset] = useState(0)
   const [showPlaces, setShowPlaces] = useState(true)
+  const [showBuildings, setShowBuildings] = useState(true)
   const [selected, setSelected] = useState<Place | null>(null)
-  const [category, setCategory] = useState<PlaceFilter>('Coffee shops')
+  const [category, setCategory] = useState<PlaceFilter>(initialFilters.category)
+  const [query, setQuery] = useState(initialFilters.query)
+  const searchInput = useRef<HTMLInputElement>(null)
   const [toast, setToast] = useState('')
   const [tileError, setTileError] = useState(false)
   const [timeResult, setTimeResult] = useState<{
@@ -252,8 +266,8 @@ export default function App() {
   const loading = !data && !error
   const bands = useMemo(() => getBands(minutes), [minutes])
   const nearby = useMemo(
-    () => (data ? nearbyPlaces(travelTimes, minutes, category) : []),
-    [data, travelTimes, minutes, category],
+    () => (data ? nearbyPlaces(travelTimes, minutes, category, query) : []),
+    [data, travelTimes, minutes, category, query],
   )
   const placesLoading = loading || (!travelTimes && !travelTimeError)
 
@@ -309,15 +323,21 @@ export default function App() {
           )
       }
     }, 500)
-    const url = new URL(window.location.href)
-    url.searchParams.set('mode', mode)
-    url.searchParams.set('minutes', String(minutes))
-    window.history.replaceState({}, '', url)
     return () => {
       clearTimeout(timer)
       controller.abort()
     }
   }, [mode, minutes, key, retry])
+  useEffect(() => {
+    const url = new URL(window.location.href)
+    url.searchParams.set('mode', mode)
+    url.searchParams.set('minutes', String(minutes))
+    if (category === 'Coffee shops') url.searchParams.delete('category')
+    else url.searchParams.set('category', category)
+    if (query.trim()) url.searchParams.set('q', query)
+    else url.searchParams.delete('q')
+    window.history.replaceState({}, '', url)
+  }, [mode, minutes, category, query])
   useEffect(() => {
     if (!toast) return
     const timer = setTimeout(() => setToast(''), 3500)
@@ -328,6 +348,10 @@ export default function App() {
       const next = readSettings(window.location.search)
       setMode(next.mode)
       setMinutes(next.minutes)
+      const filters = readPlaceFilters(window.location.search)
+      setCategory(filters.category)
+      setQuery(filters.query)
+      setSelected(null)
       setError('')
     }
     window.addEventListener('popstate', sync)
@@ -343,6 +367,18 @@ export default function App() {
     setMinutes(next)
   }
   const share = async () => {
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: 'Hallam Radius',
+          url: window.location.href,
+        })
+        return
+      } catch (error) {
+        if (error instanceof DOMException && error.name === 'AbortError') return
+        // Fall back to copying if the native share sheet is unavailable.
+      }
+    }
     try {
       await navigator.clipboard.writeText(window.location.href)
       setToast('Map link copied.')
@@ -494,195 +530,199 @@ export default function App() {
           tabIndex={-1}
           aria-label="Interactive Sheffield travel-time map"
         >
-          <MapContainer
-            center={ORIGIN}
-            zoom={14}
-            minZoom={9}
-            maxZoom={18}
-            maxBounds={[
-              [-85, -180],
-              [85, 180],
-            ]}
-            maxBoundsViscosity={1}
-            zoomControl={false}
-            className="map-canvas"
-            scrollWheelZoom
-          >
-            <Basemap onError={setTileError} />
-            {data && (
-              <GeoJSON
-                key={key}
-                data={data}
-                style={(feature) => ({
-                  color: colorFor(Number(feature?.properties.contour), bands),
-                  weight: 2,
-                  fillColor: colorFor(
-                    Number(feature?.properties.contour),
-                    bands,
-                  ),
-                  fillOpacity: 0.19,
-                  opacity: 0.85,
-                })}
-                onEachFeature={(feature, layer) => {
-                  // Keep Leaflet from simplifying the detailed service geometry.
-                  if (layer instanceof L.Polyline)
-                    layer.options.smoothFactor = 0
-                  layer.bindTooltip(
-                    `Within ${feature.properties.contour} minutes · ${modes[mode].toLowerCase()}`,
-                    { sticky: true, className: 'contour-tooltip' },
-                  )
-                }}
-              />
-            )}
-            <Marker position={ORIGIN} icon={originIcon} zIndexOffset={1000}>
-              <Tooltip
-                permanent
-                direction="top"
-                offset={[0, -22]}
-                className="origin-label"
-              >
-                <span>START HERE</span>
-                <strong>Owen Building</strong>
-              </Tooltip>
-              <Popup>
-                <strong>Owen Building</strong>
-                <br />
-                Sheffield Hallam University
-                <br />
-                Your starting point for exploring Sheffield.
-                <a
-                  className="navigate-button"
-                  href={googleMapsDirectionsUrl(
-                    { lat: ORIGIN[0], lon: ORIGIN[1] },
-                    mode,
-                  )}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Navigate in Google Maps to Owen Building (opens in a new tab)"
-                >
-                  Navigate in Google Maps{' '}
-                  <ArrowUpRight size={16} aria-hidden="true" />
-                </a>
-              </Popup>
-            </Marker>
-            {showPlaces &&
-              nearby.map(({ place, time }) => (
-                <Marker
-                  key={`${place.name}-${place.lat}-${place.lon}`}
-                  position={[place.lat, place.lon]}
-                  icon={placeIcon}
-                >
-                  <Tooltip direction="top" offset={[0, -5]}>
-                    {place.name}
-                  </Tooltip>
-                  <Popup>
-                    <strong>{place.name}</strong>
-                    <p>{place.detail}</p>
-                    <p>
-                      About {time} minutes {modes[mode].toLowerCase()} along the
-                      street network.
-                    </p>
-                    <a
-                      className="navigate-button"
-                      href={googleMapsDirectionsUrl(place, mode)}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={`Navigate in Google Maps to ${place.name} (opens in a new tab)`}
-                    >
-                      Navigate in Google Maps{' '}
-                      <ArrowUpRight size={16} aria-hidden="true" />
-                    </a>
-                    {place.source && (
-                      <a href={place.source} target="_blank" rel="noreferrer">
-                        View on OpenStreetMap
+          <div className="map-viewport">
+            <MapContainer
+              bounds={mainCampusBounds}
+              boundsOptions={campusFitOptions}
+              minZoom={9}
+              maxZoom={18}
+              maxBounds={[
+                [-85, -180],
+                [85, 180],
+              ]}
+              maxBoundsViscosity={1}
+              zoomControl={false}
+              className="map-canvas"
+              scrollWheelZoom
+            >
+              <Basemap onError={setTileError} />
+              {data && (
+                <GeoJSON
+                  key={key}
+                  data={data}
+                  style={(feature) => ({
+                    color: colorFor(Number(feature?.properties.contour), bands),
+                    weight: 2,
+                    fillColor: colorFor(
+                      Number(feature?.properties.contour),
+                      bands,
+                    ),
+                    fillOpacity: 0.19,
+                    opacity: 0.85,
+                  })}
+                  onEachFeature={(feature, layer) => {
+                    // Keep Leaflet from simplifying the detailed service geometry.
+                    if (layer instanceof L.Polyline)
+                      layer.options.smoothFactor = 0
+                    layer.bindTooltip(
+                      `Within ${feature.properties.contour} minutes · ${modes[mode].toLowerCase()}`,
+                      { sticky: true, className: 'contour-tooltip' },
+                    )
+                  }}
+                />
+              )}
+              {showBuildings && <CampusBuildings mode={mode} />}
+              {showPlaces &&
+                nearby.map(({ place, time }) => (
+                  <Marker
+                    key={`${place.name}-${place.lat}-${place.lon}`}
+                    position={[place.lat, place.lon]}
+                    icon={placeIcon}
+                  >
+                    <Tooltip direction="top" offset={[0, -5]}>
+                      {place.name}
+                    </Tooltip>
+                    <Popup pane="popupPane">
+                      <strong>{place.name}</strong>
+                      <p>{place.detail}</p>
+                      <p>
+                        About {time} minutes {modes[mode].toLowerCase()} along
+                        the street network.
+                      </p>
+                      <a
+                        className="navigate-button"
+                        href={googleMapsDirectionsUrl(place, mode)}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`Navigate in Google Maps to ${place.name} (opens in a new tab)`}
+                      >
+                        Navigate in Google Maps{' '}
+                        <ArrowUpRight size={16} aria-hidden="true" />
                       </a>
-                    )}
-                  </Popup>
-                </Marker>
-              ))}
-            <MapActions reset={reset} selected={selected} data={data} />
-          </MapContainer>
-          <div className="map-top">
-            <div className="map-title">
-              <span className="map-live-dot"></span>
-              <strong>Around Owen Building</strong>
-              <span className="map-title-divider"></span>
-              <span>
-                <ModeIcon size={14} /> {minutes} min
-              </span>
-            </div>
-            <button
-              className="mobile-places-link"
-              onClick={() => jumpTo(placesSection.current)}
-            >
-              Places ({nearby.length}) <ArrowDown size={15} />
-            </button>
-          </div>
-          <div className="map-tools">
-            <button
-              className="map-tool"
-              aria-label="Re-centre on Owen Building"
-              title="Re-centre on campus"
-              onClick={() => setReset((v) => v + 1)}
-            >
-              <LocateFixed size={20} />
-            </button>
-            <button
-              className={`map-tool ${showPlaces ? 'tool-active' : ''}`}
-              aria-label={
-                showPlaces ? 'Hide nearby places' : 'Show nearby places'
-              }
-              aria-pressed={showPlaces}
-              title="Toggle nearby places"
-              onClick={() => setShowPlaces((v) => !v)}
-            >
-              <Layers size={19} />
-            </button>
-            <button
-              className="map-tool"
-              aria-label="Download isochrones as GeoJSON"
-              title="Download GeoJSON"
-              onClick={download}
-              disabled={!data}
-            >
-              <Download size={19} />
-            </button>
-          </div>
-          <div className="north-indicator">
-            <span>N</span>
-            <div>↑</div>
-          </div>
-          {loading && (
-            <div className="map-notice" role="status">
-              <LoaderCircle size={17} className="spinning" /> Finding the
-              streets within reach…
-            </div>
-          )}
-          {error && (
-            <div className="map-notice error-notice" role="alert">
-              <Info size={19} />
-              <span>{error}</span>
+                      {place.source && (
+                        <a href={place.source} target="_blank" rel="noreferrer">
+                          View on OpenStreetMap
+                        </a>
+                      )}
+                    </Popup>
+                  </Marker>
+                ))}
+              <MapActions
+                reset={reset}
+                selected={selected}
+                data={data}
+                viewKey={key}
+              />
+            </MapContainer>
+            <div className="map-top">
               <button
-                onClick={() => {
-                  setError('')
-                  setRetry((v) => v + 1)
-                }}
+                className="mobile-places-link"
+                onClick={() => jumpTo(placesSection.current)}
               >
-                <RotateCcw size={15} /> Retry
+                Places ({nearby.length}) <ArrowDown size={15} />
               </button>
+              <div className="map-tools">
+                <button
+                  className="map-tool"
+                  aria-label="Re-centre on main campus buildings"
+                  title="Re-centre on campus"
+                  onClick={() => setReset((v) => v + 1)}
+                >
+                  <LocateFixed size={20} />
+                </button>
+                <details
+                  className="map-layers"
+                  onKeyDown={(event) => {
+                    if (event.key === 'Escape') {
+                      event.currentTarget.open = false
+                      event.currentTarget.querySelector('summary')?.focus()
+                    }
+                  }}
+                >
+                  <summary
+                    className="map-tool"
+                    aria-label="Map layers"
+                    title="Map layers"
+                  >
+                    <Layers size={19} />
+                  </summary>
+                  <div
+                    className="layer-menu"
+                    role="group"
+                    aria-label="Map layers"
+                  >
+                    <strong>Map layers</strong>
+                    <label>
+                      <input
+                        type="checkbox"
+                        checked={showBuildings}
+                        onChange={(event) =>
+                          setShowBuildings(event.target.checked)
+                        }
+                      />
+                      <span className="building-swatch" aria-hidden="true" />
+                      Hallam buildings
+                    </label>
+                    <label>
+                      <input
+                        type="checkbox"
+                        checked={showPlaces}
+                        onChange={(event) =>
+                          setShowPlaces(event.target.checked)
+                        }
+                      />
+                      Nearby places
+                    </label>
+                  </div>
+                </details>
+                <button
+                  className="map-tool"
+                  aria-label="Download isochrones as GeoJSON"
+                  title="Download GeoJSON"
+                  onClick={download}
+                  disabled={!data}
+                >
+                  <Download size={19} />
+                </button>
+              </div>
             </div>
-          )}
-          {tileError && (
-            <div className="tile-notice" role="status">
-              The basemap could not load. Check your connection and that your
-              browser supports WebGL.
+            <div className="north-indicator">
+              <span>N</span>
+              <div>↑</div>
             </div>
-          )}
-          <div className="map-bottom">
+            {loading && (
+              <div className="map-notice" role="status">
+                <LoaderCircle size={17} className="spinning" /> Finding the
+                streets within reach…
+              </div>
+            )}
+            {error && (
+              <div className="map-notice error-notice" role="alert">
+                <Info size={19} />
+                <span>{error}</span>
+                <button
+                  onClick={() => {
+                    setError('')
+                    setRetry((v) => v + 1)
+                  }}
+                >
+                  <RotateCcw size={15} /> Retry
+                </button>
+              </div>
+            )}
+            {tileError && (
+              <div className="tile-notice" role="status">
+                The basemap could not load. Check your connection and that your
+                browser supports WebGL.
+              </div>
+            )}
+          </div>
+          <footer className="map-bottom" aria-label="Map key">
             <div className="map-legend">
               <div className="legend-header">
                 <span>
-                  <ModeIcon size={15} /> {modes[mode]} from campus
+                  <ModeIcon size={15} /> {modes[mode]}
+                  <span className="legend-origin">from campus</span>
                 </span>
                 <button
                   aria-label="How travel times work"
@@ -699,6 +739,12 @@ export default function App() {
                   </div>
                 ))}
               </div>
+              {showBuildings && (
+                <div className="building-legend">
+                  <span className="building-swatch" aria-hidden="true" />
+                  Hallam buildings
+                </div>
+              )}
               <div className="legend-note">
                 <span className="status-dot"></span>
                 {key === 'pedestrian-10'
@@ -710,7 +756,7 @@ export default function App() {
                 </button>
               </div>
             </div>
-          </div>
+          </footer>
         </section>
         <section
           className="nearby-section"
@@ -750,6 +796,38 @@ export default function App() {
               </button>
             ))}
           </div>
+          <div className="place-search">
+            <Search size={17} aria-hidden="true" />
+            <input
+              ref={searchInput}
+              type="search"
+              aria-label="Search nearby places by name, street or food"
+              placeholder="Search name, street or food…"
+              maxLength={120}
+              value={query}
+              onChange={(event) => {
+                setQuery(event.target.value)
+                setSelected(null)
+              }}
+            />
+            {query && (
+              <button
+                aria-label="Clear place search"
+                onClick={() => {
+                  setQuery('')
+                  searchInput.current?.focus()
+                }}
+              >
+                <X size={17} aria-hidden="true" />
+              </button>
+            )}
+          </div>
+          <span className="sr-only" role="status">
+            {!placesLoading &&
+              !error &&
+              !travelTimeError &&
+              `${nearby.length} matching places`}
+          </span>
           {travelTimeError && !travelTimes && (
             <button
               className="times-retry"
@@ -806,7 +884,9 @@ export default function App() {
                   : error
                     ? 'Nearby places will appear when the map is ready.'
                     : travelTimeError ||
-                      'No matching places within this travel time. Try more time or another category.'}
+                      (query.trim()
+                        ? 'No matches in this category and travel time. Try another search, category or more time.'
+                        : 'No matching places within this travel time. Try more time or another category.')}
               </p>
             )}
           </div>
