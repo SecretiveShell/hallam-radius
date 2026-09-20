@@ -1,0 +1,4 @@
+# Native binaries used by the pinned Wrangler release.
+allowBuilds:
+  esbuild@0.28.1: true
+  workerd@1.20260918.1: true

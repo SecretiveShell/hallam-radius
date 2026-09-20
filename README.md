@@ -84,7 +84,17 @@ src/
 
 ## Deployment
 
-`pnpm build` produces a static `dist/` directory suitable for static hosting. Serve `index.html` for client-side fallbacks if adding routes. This project requires no application backend or API key. It has not been published from this workspace.
+`pnpm build` produces a static `dist/` directory. `wrangler.jsonc` deploys it to Cloudflare Workers Static Assets as `hallam-radius`, with SPA navigation fallback to `index.html`. No Worker script or Cloudflare Vite plugin is needed. See [Cloudflare's SPA configuration](https://developers.cloudflare.com/workers/static-assets/routing/single-page-application/).
+
+For Cloudflare's Git-connected build, use:
+
+- Build command: `pnpm run build`
+- Deploy command: `pnpm exec wrangler deploy` (the existing `npx wrangler deploy` also resolves the installed version)
+- Root directory: the repository root
+
+Wrangler is pinned in `package.json` and `pnpm-lock.yaml`, so the build installs the deployment tool before deploying. `pnpm-workspace.yaml` approves only the pinned `esbuild` and `workerd` dependency build scripts required by that version. Keep those approvals in sync when updating Wrangler. Committing this configuration avoids Wrangler's interactive framework setup and dependency installation during deployment.
+
+Run `pnpm deploy:check` to build and validate a deployment without uploading anything. Run `pnpm deploy` to build and publish using an authenticated Cloudflare account. Cloudflare's Git integration supplies deployment credentials in CI; keep credentials out of the repository. The client app itself requires no application backend or API key.
 
 An independent campus explorer; not affiliated with Sheffield Hallam University.
 
