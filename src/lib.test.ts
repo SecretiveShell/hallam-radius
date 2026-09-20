@@ -94,6 +94,21 @@ describe('place search', () => {
 })
 
 describe('shareable map settings', () => {
+  it('supports overlay-off links without changing the default for missing or blank times', () => {
+    expect(readSettings('?minutes=0')).toEqual({
+      mode: 'pedestrian',
+      minutes: 0,
+    })
+    expect(readSettings('?minutes=')).toEqual({
+      mode: 'pedestrian',
+      minutes: 10,
+    })
+    expect(readSettings('?minutes=+')).toEqual({
+      mode: 'pedestrian',
+      minutes: 10,
+    })
+    expect(getBands(0)).toEqual([])
+  })
   it('defaults safely for absent or unsupported settings', () => {
     expect(readSettings('')).toEqual({ mode: 'pedestrian', minutes: 10 })
     expect(readSettings('?mode=helicopter&minutes=-10')).toEqual({
@@ -189,6 +204,14 @@ describe('geographic results', () => {
 })
 
 describe('routing integration', () => {
+  it('never sends an overlay-off request to the routing service', async () => {
+    const request = vi.fn()
+    vi.stubGlobal('fetch', request)
+    await expect(
+      fetchContours('pedestrian', 0, new AbortController().signal),
+    ).rejects.toThrow('positive time limit')
+    expect(request).not.toHaveBeenCalled()
+  })
   it.each<Mode>(['pedestrian', 'bicycle', 'auto'])(
     'requests %s isochrones from the correct campus origin',
     async (mode) => {
@@ -244,6 +267,26 @@ describe('individual routed travel times', () => {
     sources_to_targets: [
       times.map((time, to_index) => ({ from_index: 0, to_index, time })),
     ],
+  })
+
+  it('removes the time cap at zero while retaining search, category and valid-route filtering', () => {
+    const cafe = places.find((place) => place.name === 'Ambulo')!
+    const times = new Map([
+      [placeKey(cafe), 2400],
+      [placeKey(places[0]), null],
+      [placeKey(places[1]), Infinity],
+      [placeKey(places[2]), -1],
+    ])
+    expect(
+      nearbyPlaces(times, 0, 'Coffee shops', 'ambulo').map(
+        ({ place, time }) => [place.name, time],
+      ),
+    ).toEqual([['Ambulo', 40]])
+    expect(nearbyPlaces(times, 30, 'Coffee shops', 'ambulo')).toEqual([])
+    expect(nearbyPlaces(times, 0, 'Places to eat', 'ambulo')).toEqual([])
+    expect(
+      nearbyPlaces(times, 0, 'All places').map(({ place }) => place),
+    ).toEqual([cafe])
   })
 
   it('has a saved route result for every listed location', () => {

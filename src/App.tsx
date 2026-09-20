@@ -262,12 +262,16 @@ export default function App() {
   const travelTimeError = timeError?.mode === mode ? timeError.message : ''
 
   const key = `${mode}-${minutes}`
-  const data = result?.key === key ? result.data : null
-  const loading = !data && !error
+  const overlayEnabled = minutes > 0
+  const data = overlayEnabled && result?.key === key ? result.data : null
+  const loading = overlayEnabled && !data && !error
   const bands = useMemo(() => getBands(minutes), [minutes])
   const nearby = useMemo(
-    () => (data ? nearbyPlaces(travelTimes, minutes, category, query) : []),
-    [data, travelTimes, minutes, category, query],
+    () =>
+      data || !overlayEnabled
+        ? nearbyPlaces(travelTimes, minutes, category, query)
+        : [],
+    [data, overlayEnabled, travelTimes, minutes, category, query],
   )
   const placesLoading = loading || (!travelTimes && !travelTimeError)
 
@@ -302,6 +306,7 @@ export default function App() {
   }, [mode, timeRetry])
 
   useEffect(() => {
+    if (!overlayEnabled) return
     const controller = new AbortController()
     const timer = window.setTimeout(async () => {
       try {
@@ -327,7 +332,7 @@ export default function App() {
       clearTimeout(timer)
       controller.abort()
     }
-  }, [mode, minutes, key, retry])
+  }, [mode, minutes, key, retry, overlayEnabled])
   useEffect(() => {
     const url = new URL(window.location.href)
     url.searchParams.set('mode', mode)
@@ -479,36 +484,43 @@ export default function App() {
             </div>
             <div className="time-value">
               <span>
-                Up to <strong>{minutes}</strong> minutes
+                {overlayEnabled ? 'Up to ' : ''}
+                <strong>{minutes}</strong> minutes
+                {!overlayEnabled && ' · Overlay off'}
               </span>
               <span className="time-round">
                 <ModeIcon size={17} />
               </span>
             </div>
             <label className="sr-only" htmlFor="travel-time">
-              Maximum travel time in minutes
+              Maximum travel time in minutes; zero turns the overlay off
             </label>
             <input
               id="travel-time"
               type="range"
-              min="5"
+              min="0"
               max="30"
               step="5"
               value={minutes}
-              aria-valuetext={`${minutes} minutes`}
+              aria-valuetext={
+                overlayEnabled
+                  ? `${minutes} minutes`
+                  : '0 minutes, overlay off, no time limit'
+              }
               onChange={(e) => updateMinutes(Number(e.target.value))}
               style={
                 {
-                  '--range-progress': `${((minutes - 5) / 25) * 100}%`,
+                  '--range-progress': `${(minutes / 30) * 100}%`,
                 } as React.CSSProperties
               }
             />
             <div className="range-labels">
-              <span>5 min</span>
+              <span>0 · Off</span>
               <span>15 min</span>
               <span>30 min</span>
             </div>
             <div className="band-row">
+              {!overlayEnabled && <span>Showing all listed places</span>}
               {bands.map((band, i) => (
                 <span key={band}>
                   <i style={{ background: colors[i] }}></i>
@@ -696,7 +708,7 @@ export default function App() {
                 streets within reach…
               </div>
             )}
-            {error && (
+            {overlayEnabled && error && (
               <div className="map-notice error-notice" role="alert">
                 <Info size={19} />
                 <span>{error}</span>
@@ -721,8 +733,11 @@ export default function App() {
             <div className="map-legend">
               <div className="legend-header">
                 <span>
-                  <ModeIcon size={15} /> {modes[mode]}
-                  <span className="legend-origin">from campus</span>
+                  <ModeIcon size={15} />{' '}
+                  {overlayEnabled ? modes[mode] : 'Overlay off'}
+                  {overlayEnabled && (
+                    <span className="legend-origin">from campus</span>
+                  )}
                 </span>
                 <button
                   aria-label="How travel times work"
@@ -732,6 +747,9 @@ export default function App() {
                 </button>
               </div>
               <div className="legend-colors">
+                {!overlayEnabled && (
+                  <span className="overlay-off-note">No time limit</span>
+                )}
                 {bands.map((band, i) => (
                   <div key={band}>
                     <span style={{ background: colors[i] }}></span>
@@ -745,16 +763,18 @@ export default function App() {
                   Hallam buildings
                 </div>
               )}
-              <div className="legend-note">
-                <span className="status-dot"></span>
-                {key === 'pedestrian-10'
-                  ? 'Saved street-network estimate'
-                  : 'Street-network estimate'}
-                <span>·</span>
-                <button onClick={() => setAbout(true)}>
-                  About the data <ArrowUpRight size={10} />
-                </button>
-              </div>
+              {overlayEnabled && (
+                <div className="legend-note">
+                  <span className="status-dot"></span>
+                  {key === 'pedestrian-10'
+                    ? 'Saved street-network estimate'
+                    : 'Street-network estimate'}
+                  <span>·</span>
+                  <button onClick={() => setAbout(true)}>
+                    About the data <ArrowUpRight size={10} />
+                  </button>
+                </div>
+              )}
             </div>
           </footer>
         </section>
@@ -767,7 +787,9 @@ export default function App() {
           <div className="nearby-heading">
             <h2 id="places-title">
               Nearby places{' '}
-              <span>{data && travelTimes ? nearby.length : '—'}</span>
+              <span>
+                {(data || !overlayEnabled) && travelTimes ? nearby.length : '—'}
+              </span>
             </h2>
             <button
               className="mobile-map-link"
@@ -884,9 +906,11 @@ export default function App() {
                   : error
                     ? 'Nearby places will appear when the map is ready.'
                     : travelTimeError ||
-                      (query.trim()
-                        ? 'No matches in this category and travel time. Try another search, category or more time.'
-                        : 'No matching places within this travel time. Try more time or another category.')}
+                      (!overlayEnabled
+                        ? 'No matching places in the saved directory. Try another search or category.'
+                        : query.trim()
+                          ? 'No matches in this category and travel time. Try another search, category or more time.'
+                          : 'No matching places within this travel time. Try more time or another category.')}
               </p>
             )}
           </div>

@@ -164,7 +164,7 @@ export function nearbyPlaces(
         typeof seconds !== 'number' ||
         !Number.isFinite(seconds) ||
         seconds < 0 ||
-        seconds > minutes * 60
+        (minutes !== 0 && seconds > minutes * 60)
       )
         return []
       return [{ place, seconds, time: Math.max(1, Math.ceil(seconds / 60)) }]
@@ -292,6 +292,7 @@ export async function fetchTravelTimes(
 }
 
 export function getBands(minutes: number) {
+  if (minutes === 0) return []
   return [
     ...new Set([
       Math.max(1, Math.round(minutes / 3)),
@@ -303,10 +304,11 @@ export function getBands(minutes: number) {
 export function readSettings(search: string): { mode: Mode; minutes: number } {
   const params = new URLSearchParams(search)
   const mode = params.get('mode')
-  const minutes = Number(params.get('minutes'))
+  const rawMinutes = params.get('minutes')
+  const minutes = rawMinutes?.trim() ? Number(rawMinutes) : NaN
   return {
     mode: mode === 'bicycle' || mode === 'auto' ? mode : 'pedestrian',
-    minutes: [5, 10, 15, 20, 25, 30].includes(minutes) ? minutes : 10,
+    minutes: [0, 5, 10, 15, 20, 25, 30].includes(minutes) ? minutes : 10,
   }
 }
 export function colorFor(contour: number, bands: number[]) {
@@ -376,6 +378,8 @@ export async function fetchContours(
   minutes: number,
   signal: AbortSignal,
 ): Promise<Contours> {
+  if (minutes <= 0)
+    throw new RangeError('Travel-area requests require a positive time limit.')
   const params = {
     locations: [{ lat: ORIGIN[0], lon: ORIGIN[1] }],
     ...routingProfile(mode),

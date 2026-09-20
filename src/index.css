@@ -657,6 +657,10 @@ input[type='range']::-moz-range-thumb {
   gap: 5px;
   margin-top: 13px;
 }
+.overlay-off-note {
+  font-size: 11px;
+  color: #657357;
+}
 .legend-colors > div {
   flex: 1;
 }

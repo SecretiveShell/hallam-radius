@@ -35,6 +35,7 @@ pnpm format:check
 ## Features
 
 - Walking, cycling and driving isochrones with 5–30 minute controls, always starting at Owen Building.
+- Set the slider to 0 to turn off the travel-time overlay and remove the time limit from listed places. Campus buildings remain visible, and places still respect category/search filters and require a valid route. Zero skips contour requests; the default remains 10 minutes, and `?minutes=0` restores the off setting.
 - Coffee shops selected by default. Search nearby places by name, street or food description; results and markers share the same category and routed travel-time filters. Search ignores case and accents.
 - The header Share button opens the native share sheet where supported, with clipboard fallback. Shared URLs preserve the travel mode, time limit, category and search; cancelling the share sheet leaves the clipboard alone.
 - Hallam City Campus building footprints highlighted in plum with permanent name labels by default. The Layers control independently toggles buildings (including labels) and nearby places; building popups show names and Google Maps directions.
